@@ -1,0 +1,25 @@
+c:\users\hp-pc\documents\visual studio 2015\Projects\Exam\Service.Pattern\obj\Debug\Service.Pattern.csprojResolveAssemblyReference.cache
+c:\users\hp-pc\documents\visual studio 2015\Projects\Exam\Service.Pattern\bin\Debug\Service.Pattern.dll
+c:\users\hp-pc\documents\visual studio 2015\Projects\Exam\Service.Pattern\bin\Debug\Service.Pattern.pdb
+c:\users\hp-pc\documents\visual studio 2015\Projects\Exam\Service.Pattern\bin\Debug\Exam.Data.dll
+c:\users\hp-pc\documents\visual studio 2015\Projects\Exam\Service.Pattern\bin\Debug\Exam.Domain.dll
+c:\users\hp-pc\documents\visual studio 2015\Projects\Exam\Service.Pattern\bin\Debug\EntityFramework.dll
+c:\users\hp-pc\documents\visual studio 2015\Projects\Exam\Service.Pattern\bin\Debug\Exam.Data.pdb
+c:\users\hp-pc\documents\visual studio 2015\Projects\Exam\Service.Pattern\bin\Debug\Exam.Domain.pdb
+c:\users\hp-pc\documents\visual studio 2015\Projects\Exam\Service.Pattern\bin\Debug\EntityFramework.xml
+c:\users\hp-pc\documents\visual studio 2015\Projects\Exam\Service.Pattern\obj\Debug\Service.Pattern.dll
+c:\users\hp-pc\documents\visual studio 2015\Projects\Exam\Service.Pattern\obj\Debug\Service.Pattern.pdb
+D:\Boulot\Exam\Service.Pattern\bin\Debug\Service.Pattern.dll
+D:\Boulot\Exam\Service.Pattern\bin\Debug\Service.Pattern.pdb
+D:\Boulot\Exam\Service.Pattern\bin\Debug\Exam.Data.dll
+D:\Boulot\Exam\Service.Pattern\bin\Debug\Exam.Domain.dll
+D:\Boulot\Exam\Service.Pattern\bin\Debug\EntityFramework.dll
+D:\Boulot\Exam\Service.Pattern\bin\Debug\Exam.Data.pdb
+D:\Boulot\Exam\Service.Pattern\bin\Debug\Exam.Data.dll.config
+D:\Boulot\Exam\Service.Pattern\bin\Debug\Exam.Domain.pdb
+D:\Boulot\Exam\Service.Pattern\bin\Debug\EntityFramework.xml
+D:\Boulot\Exam\Service.Pattern\obj\Debug\Service.Pattern.csprojAssemblyReference.cache
+D:\Boulot\Exam\Service.Pattern\obj\Debug\Service.Pattern.csproj.CoreCompileInputs.cache
+D:\Boulot\Exam\Service.Pattern\obj\Debug\Service.Pattern.csproj.CopyComplete
+D:\Boulot\Exam\Service.Pattern\obj\Debug\Service.Pattern.dll
+D:\Boulot\Exam\Service.Pattern\obj\Debug\Service.Pattern.pdb

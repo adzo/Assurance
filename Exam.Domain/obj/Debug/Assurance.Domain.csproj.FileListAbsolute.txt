@@ -1,0 +1,6 @@
+D:\Boulot\Exam\Exam.Domain\bin\Debug\Exam.Domain.dll
+D:\Boulot\Exam\Exam.Domain\bin\Debug\Exam.Domain.pdb
+D:\Boulot\Exam\Exam.Domain\obj\Debug\Assurance.Domain.csprojAssemblyReference.cache
+D:\Boulot\Exam\Exam.Domain\obj\Debug\Assurance.Domain.csproj.CoreCompileInputs.cache
+D:\Boulot\Exam\Exam.Domain\obj\Debug\Exam.Domain.dll
+D:\Boulot\Exam\Exam.Domain\obj\Debug\Exam.Domain.pdb

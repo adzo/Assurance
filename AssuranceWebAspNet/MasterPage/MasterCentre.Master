@@ -1,0 +1,214 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterCentre.master.cs" Inherits="AssuranceWebAspNet.MasterPage.MasterCentre1" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="Creative - Bootstrap 3 Responsive Admin Template"/>
+    <meta name="author" content="GeeksLabs"/>
+    <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal"/>
+    <link rel="shortcut icon" href="~/img/favicon.png"/>
+
+    <title>GGC-Assurance</title>
+
+   <!-- Bootstrap CSS -->
+    <link href="~/css/bootstrap.min.css" rel="stylesheet"/>
+    <!-- bootstrap theme -->
+    <link href="~/css/bootstrap-theme.css" rel="stylesheet"/>
+    <!--external css-->
+    <!-- font icon -->
+    <link href="~/css/elegant-icons-style.css" rel="stylesheet" />
+    <link href="~/css/font-awesome.min.css" rel="stylesheet" />
+    <!-- Custom styles -->
+    <link href="~/css/style.css" rel="stylesheet">
+    <link href="~/css/style-responsive.css" rel="stylesheet" />
+
+
+    <script type="text/javascript" src="<%= Page.ResolveClientUrl("~/js/jquery.js") %>"></script>
+    <script type="text/javascript" src="<%= Page.ResolveClientUrl("~/js/bootstrap.min.js") %>"></script>
+    <script type="text/javascript" src="<%= Page.ResolveClientUrl("~/js/jquery.scrollTo.min.js") %>"></script>
+    <script type="text/javascript" src="<%= Page.ResolveClientUrl("~/js/jquery.nicescroll.js") %>"></script>
+    <script type="text/javascript" src="<%= Page.ResolveClientUrl("~/js/scripts.js") %>"></script>
+
+
+
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+
+        <section id="container" class="">
+            <!--header start-->
+
+            <header class="header dark-bg">
+                <div class="toggle-nav">
+                    <div class="icon-reorder tooltips" data-original-title="Toggle Navigation" data-placement="bottom"><i class="icon_menu"></i></div>
+                </div>
+
+                <!--logo start-->
+                <a href="Accueil.aspx" class="logo"><img src="../img/logo.png" class="img-responsive" style="height:40px;width:auto" /></a>
+                <!--logo end-->
+
+
+
+                <div class="top-nav notification-row">
+                    <!-- notificatoin dropdown start-->
+                    <ul class="nav pull-right top-menu">
+
+
+
+                        <!-- alert notification start-->
+                        <li id="alert_notificatoin_bar" class="dropdown">
+                            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+
+                                <i class="icon-bell-l"></i>
+                                <span class="badge bg-important">7</span>
+                            </a>
+                            <ul class="dropdown-menu extended notification">
+                                <div class="notify-arrow notify-arrow-blue"></div>
+                                <li>
+                                    <p class="blue">You have 4 new notifications</p>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="label label-primary"><i class="icon_profile"></i></span>
+                                        Friend Request
+                                    <span class="small italic pull-right">5 mins</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="label label-warning"><i class="icon_pin"></i></span>
+                                        John location.
+                                    <span class="small italic pull-right">50 mins</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="label label-danger"><i class="icon_book_alt"></i></span>
+                                        Project 3 Completed.
+                                    <span class="small italic pull-right">1 hr</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="label label-success"><i class="icon_like"></i></span>
+                                        Mick appreciated your work.
+                                    <span class="small italic pull-right">Today</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">See all notifications</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- alert notification end-->
+                        <!-- user login dropdown start-->
+                        <li class="dropdown">
+                            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                                <span class="profile-ava">
+                                    <img alt="" src="img/avatar1_small.jpg">
+                                </span>
+                                <span class="username">
+                                    <asp:Label ID="lblname" runat="server" Text=""></asp:Label></span>
+                                <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu extended logout">
+                                <div class="log-arrow-up"></div>
+                                <li class="eborder-top">
+                                    <a href="#"><i class="icon_profile"></i>Compte</a>
+                                </li>
+
+                                <li>
+                                    <a href="../GGCLogin.aspx"><i class="icon_key_alt"></i>Déconnexion</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- user login dropdown end -->
+                    </ul>
+                    <!-- notificatoin dropdown end-->
+                </div>
+            </header>
+            <!--header end-->
+
+            <!--sidebar start-->
+            <aside>
+                <div id="sidebar" class="nav-collapse ">
+                    <!-- sidebar menu start-->
+                    <ul class="sidebar-menu">
+                        <li class="">
+                            <a class="" href="Accueil.aspx">
+                                <i class="icon_house_alt"></i>
+                                <span>Accueil</span>
+                            </a>
+                        </li>
+
+
+                        <li>
+                            <a class="" href="PriseCharge.aspx">
+                                <i class="icon_genius"></i>
+                                <span>Prise en charge</span>
+                            </a>
+                        </li>
+                          <li>
+                            <a class="" href="Historiques.aspx">
+                                <i class="icon_genius"></i>
+                                <span>Historiques</span>
+                            </a>
+                        </li>
+                          <li>
+                            <a class="" href="Experts.aspx">
+                                <i class="icon_genius"></i>
+                                <span>Experts</span>
+                            </a>
+                        </li>
+                          <li>
+                            <a class="" href="Garages.aspx">
+                                <i class="icon_genius"></i>
+                                <span>Garages</span>
+                            </a>
+                        </li>
+  <li>
+                            <a class="" href="Notifications.aspx">
+                                <i class="icon_genius"></i>
+                                <span>Notifications</span>
+                            </a>
+                        </li>
+                          <li>
+                            <a class="" href="Statistiques.aspx">
+                                <i class="icon_genius"></i>
+                                <span>Statistiques</span>
+                            </a>
+                        </li>
+
+
+
+
+                    </ul>
+                    <!-- sidebar menu end-->
+                </div>
+            </aside>
+            <!--sidebar end-->
+
+            <!--main content start-->
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+            <!--main content end-->
+            <div class="text-right">
+                <div class="credits">
+
+                    <a href="https://bootstrapmade.com/">GGC</a> by <a href="http://ntis.com.tn/">NTIS</a>
+                </div>
+            </div>
+        </section>
+        
+
+    </form>
+</body>
+</html>

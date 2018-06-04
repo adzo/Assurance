@@ -1,0 +1,16 @@
+D:\Boulot\Exam\Exam.Service\bin\Debug\Exam.Service.dll
+D:\Boulot\Exam\Exam.Service\bin\Debug\Exam.Service.pdb
+D:\Boulot\Exam\Exam.Service\bin\Debug\Exam.Data.dll
+D:\Boulot\Exam\Exam.Service\bin\Debug\Service.Pattern.dll
+D:\Boulot\Exam\Exam.Service\bin\Debug\EntityFramework.dll
+D:\Boulot\Exam\Exam.Service\bin\Debug\Exam.Data.pdb
+D:\Boulot\Exam\Exam.Service\bin\Debug\Exam.Data.dll.config
+D:\Boulot\Exam\Exam.Service\bin\Debug\Service.Pattern.pdb
+D:\Boulot\Exam\Exam.Service\bin\Debug\EntityFramework.xml
+D:\Boulot\Exam\Exam.Service\obj\Debug\Assurance.Service.csprojAssemblyReference.cache
+D:\Boulot\Exam\Exam.Service\obj\Debug\Assurance.Service.csproj.CoreCompileInputs.cache
+D:\Boulot\Exam\Exam.Service\obj\Debug\Assurance.Service.csproj.CopyComplete
+D:\Boulot\Exam\Exam.Service\obj\Debug\Exam.Service.dll
+D:\Boulot\Exam\Exam.Service\obj\Debug\Exam.Service.pdb
+D:\Boulot\Exam\Exam.Service\bin\Debug\Exam.Domain.dll
+D:\Boulot\Exam\Exam.Service\bin\Debug\Exam.Domain.pdb
