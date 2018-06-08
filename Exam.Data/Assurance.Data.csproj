@@ -65,6 +65,10 @@
     <Compile Include="Migrations\201806031253159_updateRelationTableUserSinistre.Designer.cs">
       <DependentUpon>201806031253159_updateRelationTableUserSinistre.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201806080342291_lastupdate.cs" />
+    <Compile Include="Migrations\201806080342291_lastupdate.Designer.cs">
+      <DependentUpon>201806080342291_lastupdate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="UserDbContext.cs" />
     <Compile Include="Infrastructure\DatabaseFactory.cs" />
@@ -98,6 +102,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201806031253159_updateRelationTableUserSinistre.resx">
       <DependentUpon>201806031253159_updateRelationTableUserSinistre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806080342291_lastupdate.resx">
+      <DependentUpon>201806080342291_lastupdate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

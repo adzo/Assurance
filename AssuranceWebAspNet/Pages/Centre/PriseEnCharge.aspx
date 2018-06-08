@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage/MasterCentre.Master"AutoEventWireup="true" CodeBehind="PriseEnCharge.aspx.cs" Inherits="AssuranceWebAspNet.Pages.Centre.PriseEnCharge" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage/MasterCentre.Master" AutoEventWireup="true" CodeBehind="PriseEnCharge.aspx.cs" Inherits="AssuranceWebAspNet.Pages.Centre.PriseEnCharge" %>
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
@@ -19,21 +19,21 @@
             </div>
             <div class="container">
                 <div class="row">
-                <div class="form-inline">
-                    <div class="form-horizontal form-group">
-                        
-                             <asp:TextBox ID="_TxtNumSinistre" CssClass="form-control input-group-sm" runat="server" placeholder="Numéro de sinistre"></asp:TextBox>
-                        
+                    <div class="form-inline">
+                        <div class="form-horizontal form-group">
 
+                            <asp:TextBox ID="_TxtNumSinistre" CssClass="form-control input-group-sm" runat="server" placeholder="Numéro de sinistre"></asp:TextBox>
+
+
+                        </div>
+                        <div class="form-horizontal form-group">
+
+                            <asp:TextBox ID="_TxtNumContrat" CssClass="form-control input-group-sm" runat="server" placeholder="Numéro de contrat"></asp:TextBox>
+
+                        </div>
+                        <asp:Button ID="btnChercher" CssClass="btn btn-info" runat="server" Text="Recherche" />
                     </div>
-                    <div class="form-horizontal form-group">
-                         
-                        <asp:TextBox ID="_TxtNumContrat" CssClass="form-control input-group-sm" runat="server" placeholder="Numéro de contrat"></asp:TextBox>
-                      
-                    </div>
-                    <asp:Button ID="btnChercher" CssClass="btn btn-info" runat="server"  Text="Recherche" />
                 </div>
-                    </div>
                 <div class="row" visible="false" id="res" runat="server">
                     Pas de données
                 </div>
@@ -47,10 +47,12 @@
                     <li><a data-toggle="tab" href="#menu4">Véhicule</a></li>
                     <li><a data-toggle="tab" href="#menu5">Garanties</a></li>
                     <li><a data-toggle="tab" href="#menu6">Sinistre</a></li>
-                   
+
                 </ul>
 
+
                 <div class="tab-content" style="background-color: white">
+                    <!-- Menu COntrat -->
                     <div id="menu1" class="tab-pane fade in active">
                         <br />
                         <div class="row">
@@ -120,10 +122,8 @@
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label col-sm-4" for="email">Fractionnement:</label>
-                                    <div class="col-sm-2">
-                                        <asp:TextBox ID="_CFractionnement1" CssClass="form-control input-sm" runat="server"></asp:TextBox>
-                                    </div>
-                                    <div class="col-sm-4">
+                                    
+                                    <div class="col-sm-6">
                                         <asp:TextBox ID="_CFractionnement2" CssClass="form-control input-sm" runat="server"></asp:TextBox>
                                     </div>
 
@@ -144,21 +144,24 @@
                         </div>
                         <br />
                     </div>
+                    
 
+
+                    <!-- Menu Souscripteur -->
                     <div id="menu2" class="tab-pane">
                         <br />
                         <div class="row">
                             <div class="col-md-4 col-md-offset-4">
                                 <label class="radio-inline">
-                                  <asp:RadioButton ID="_pp" Text="Personne physique" GroupName="TypeSouscripteur"  runat="server" />
+                                    <asp:RadioButton ID="_pp" Text="Personne physique" GroupName="TypeSouscripteur" runat="server" />
 
                                 </label>
                                 <label class="radio-inline">
-                                    
+
                                     <asp:RadioButton ID="_pm" Text="Personne morale" GroupName="TypeSouscripteur" runat="server" />
                                 </label>
-                                
-                                
+
+
                             </div>
 
 
@@ -209,7 +212,7 @@
                                 <div class="form-group">
                                     <label class="control-label col-sm-4" for="email">Délivrée le:</label>
                                     <div class="col-sm-6">
-                                       <asp:TextBox ID="_DelivreLe" CssClass="form-control input-sm" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="_DelivreLe" CssClass="form-control input-sm" runat="server"></asp:TextBox>
                                     </div>
                                 </div>
                             </div>
@@ -217,82 +220,83 @@
                         <br />
                         <div class="row">
                             <div class="col-md-7">
-<fieldset>
-    <legend>Coordonnés</legend>
-    <table class="table table-striped">
-    <thead>
-      <tr>
-        <th>Adresse</th>
-        <th>Ville</th>
-        <th>Code Postal</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Rue d'Iran</td>
-        <td>Tunis</td>
-        <td>1002</td>
-      </tr>
-    </tbody>
-  </table>
-</fieldset>
+                                <fieldset>
+                                    <legend>Coordonnés</legend>
+                                    <table class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>Adresse</th>
+                                                <th>Ville</th>
+                                                <th>Code Postal</th>
+                                            </tr>
+                                        </thead>
+                                         <tbody>
+                                            <tr>
+                                                <td>
+                                                    <asp:Label ID="LabelSouscripteurAddresse" runat="server" Text="Label"></asp:Label></td>
+                                                <td><asp:Label ID="LabelSouscripteurVille" runat="server" Text="Label"></asp:Label></td></td>
+                                                <td><asp:Label ID="LabelSouscripteurCode" runat="server" Text="Label"></asp:Label></td></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </fieldset>
 
-    </div>
-<div class="col-md-5">
-<fieldset>
-    <legend>Contact</legend>
-<table class="table table-striped">
-    <thead>
-      <tr>
-        <th>Communication</th>
-        <th>Valeur</th>
-       
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Telephone</td>
-        <td>71123456</td>
-        
-      </tr>
-      <tr>
-        <td>Mobile</td>
-        <td>58654123</td>
-       
-      </tr>
-      <tr>
-        <td>Fax</td>
-        <td>71457812</td>
-       
-      </tr>
-        <tr>
-        <td>E-Mail</td>
-        <td>Foulen@NTIS.com.tn</td>
-       
-      </tr>
-    
-    </tbody>
-  </table>
-</fieldset>
+                            </div>
+                            <div class="col-md-5">
+                                <fieldset>
+                                    <legend>Contact</legend>
+                                    <table class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>Communication</th>
+                                                <th>Valeur</th>
+
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Téléphone</td>
+                                                <td><asp:Label ID="LabelSouscripteurTelephone" runat="server" Text="Label"></asp:Label></td>
+
+                                            </tr>
+                                            <tr>
+                                                <td>Mobile</td>
+                                                <td><asp:Label ID="LabelSouscripteurMobile" runat="server" Text="Label"></asp:Label></td>
+
+                                            </tr>
+                                            <tr>
+                                                <td>Fax</td>
+                                                <td><asp:Label ID="LabelSouscripteurFax" runat="server" Text="Label"></asp:Label></td>
+
+                                            </tr>
+                                            <tr>
+                                                <td>E-Mail</td>
+                                                <td><asp:Label ID="LabelSouscripteurMail" runat="server" Text="Label"></asp:Label></td>
+
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </fieldset>
                             </div>
                         </div>
                         <br />
                     </div>
 
+                    <!-- Menu Assuré -->
                     <div id="menu3" class="tab-pane">
                         <br />
                         <div class="row">
                             <div class="col-md-4 col-md-offset-4">
                                 <label class="radio-inline">
-                                  <asp:RadioButton ID="RadioButton1" Text="Personne physique" GroupName="TypeSouscripteur"  runat="server" />
+                                    <asp:RadioButton ID="RadioButton1" Text="Personne physique" GroupName="TypeSouscripteur" runat="server" />
 
                                 </label>
                                 <label class="radio-inline">
-                                    
+
                                     <asp:RadioButton ID="RadioButton2" Text="Personne morale" GroupName="TypeSouscripteur" runat="server" />
                                 </label>
-                                
-                                
+
+
                             </div>
 
 
@@ -370,7 +374,7 @@
                                 <div class="form-group">
                                     <label class="control-label col-sm-4" for="email">Délivrée le:</label>
                                     <div class="col-sm-6">
-                                       <asp:TextBox ID="_A_DelivreeLe" CssClass="form-control input-sm" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="_A_DelivreeLe" CssClass="form-control input-sm" runat="server"></asp:TextBox>
                                     </div>
                                 </div>
                             </div>
@@ -378,76 +382,78 @@
                         <br />
                         <div class="row">
                             <div class="col-md-7">
-<fieldset>
-    <legend>Coordonnés</legend>
-    <table class="table table-striped">
-    <thead>
-      <tr>
-        <th>Firstname</th>
-        <th>Lastname</th>
-        <th>Email</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>John</td>
-        <td>Doe</td>
-        <td>john@example.com</td>
-      </tr>
-      <tr>
-        <td>Mary</td>
-        <td>Moe</td>
-        <td>mary@example.com</td>
-      </tr>
-      <tr>
-        <td>July</td>
-        <td>Dooley</td>
-        <td>july@example.com</td>
-      </tr>
-    </tbody>
-  </table>
-</fieldset>
+                                <fieldset>
+                                    <legend>Coordonnés</legend>
+                                    <table class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>Adresse</th>
+                                                <th>Ville</th>
+                                                <th>Code Postal</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <asp:Label ID="LabelAssureAdresse" runat="server" Text="Label"></asp:Label></td>
+                                                <td><asp:Label ID="LabelAssureVille" runat="server" Text="Label"></asp:Label></td></td>
+                                                <td><asp:Label ID="LabelAssureCodePostal" runat="server" Text="Label"></asp:Label></td></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </fieldset>
 
                             </div>
                             <div class="col-md-5">
-                                                                <fieldset>
-    <legend>Contact</legend>
-                                                                    <table class="table table-striped">
-    <thead>
-      <tr>
-        <th>Firstname</th>
-        <th>Lastname</th>
-       
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>John</td>
-        <td>Doe</td>
-        
-      </tr>
-      <tr>
-        <td>Mary</td>
-        <td>Moe</td>
-       
-      </tr>
-    
-    </tbody>
-  </table>
-</fieldset>
+                                <fieldset>
+                                    <legend>Contact</legend>
+                                    <table class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>Communication</th>
+                                                <th>Valeur</th>
+
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Téléphone</td>
+                                                <td><asp:Label ID="LabelAssureTelephone" runat="server" Text="Label"></asp:Label></td>
+
+                                            </tr>
+                                            <tr>
+                                                <td>Mobile</td>
+                                                <td><asp:Label ID="LabelAssureMobile" runat="server" Text="Label"></asp:Label></td>
+
+                                            </tr>
+                                            <tr>
+                                                <td>Fax</td>
+                                                <td><asp:Label ID="LabelAssureFax" runat="server" Text="Label"></asp:Label></td>
+
+                                            </tr>
+                                            <tr>
+                                                <td>E-Mail</td>
+                                                <td><asp:Label ID="LabelAssureMail" runat="server" Text="Label"></asp:Label></td>
+
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </fieldset>
                             </div>
                         </div>
                         <br />
                     </div>
-                    
+
+
+                    <!-- Menu Vehicule -->
                     <div id="menu4" class="tab-pane">
                         <br />
                         <div class="row">
-                    <div class="col-md-4 form-horizontal">
+                            <div class="col-md-4 form-horizontal">
                                 <div class="form-group">
                                     <label class="control-label col-sm-4" for="email">Immatriculation:</label>
                                     <div class="col-sm-6">
-                                      
+
                                         <asp:TextBox ID="_Immatriculation" CssClass="form-control input-sm" runat="server"></asp:TextBox>
                                     </div>
                                 </div>
@@ -463,7 +469,7 @@
                                         <asp:TextBox ID="_TypeConstructeur" CssClass="form-control input-sm" runat="server"></asp:TextBox>
                                     </div>
                                 </div>
-                                  <div class="form-group">
+                                <div class="form-group">
                                     <label class="control-label col-sm-4" for="email">Carroserie:</label>
                                     <div class="col-sm-6">
                                         <asp:TextBox ID="_Carroserie" CssClass="form-control input-sm" runat="server"></asp:TextBox>
@@ -481,13 +487,13 @@
                                         <asp:TextBox ID="_Poidvide" CssClass="form-control input-sm" runat="server"></asp:TextBox>
                                     </div>
                                 </div>
-                                  <div class="form-group">
+                                <div class="form-group">
                                     <label class="control-label col-sm-4" for="email">N° Remorque:</label>
                                     <div class="col-sm-6">
                                         <asp:TextBox ID="_Remorque" CssClass="form-control input-sm" runat="server"></asp:TextBox>
                                     </div>
                                 </div>
-                                     <div class="form-group">
+                                <div class="form-group">
                                     <label class="control-label col-sm-4" for="email">Type:</label>
                                     <div class="col-sm-6">
                                         <asp:TextBox ID="_TypeRemorque" CssClass="form-control input-sm" runat="server"></asp:TextBox>
@@ -497,9 +503,9 @@
                                     <label class="control-label col-sm-4" for="email">Avec délégation:</label>
                                     <div class="col-sm-6">
                                         <label class="radio-inline">
-                                    <input type="radio" name="optradio">Oui</label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="optradio">Non</label>
+                                            <input type="radio" name="optradio">Oui</label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="optradio">Non</label>
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -508,15 +514,15 @@
                                         <asp:TextBox ID="_ValeuràNeuf" CssClass="form-control input-sm" runat="server"></asp:TextBox>
                                     </div>
                                 </div>
-                                  <div class="form-group">
+                                <div class="form-group">
                                     <label class="control-label col-sm-4" for="email">Classe:</label>
                                     <div class="col-sm-6">
                                         <asp:TextBox ID="_Classe" CssClass="form-control input-sm" runat="server"></asp:TextBox>
                                     </div>
                                 </div>
-                               
-                            </div> 
-                    <div class="col-md-4 form-horizontal">
+
+                            </div>
+                            <div class="col-md-4 form-horizontal">
                                 <div class="form-group">
                                     <label class="control-label col-sm-4" for="email">Genre:</label>
                                     <div class="col-sm-6">
@@ -535,7 +541,7 @@
                                         <asp:TextBox ID="_NumSerie" CssClass="form-control input-sm" runat="server"></asp:TextBox>
                                     </div>
                                 </div>
-                                  <div class="form-group">
+                                <div class="form-group">
                                     <label class="control-label col-sm-4" for="email">Nombre Place:</label>
                                     <div class="col-sm-6">
                                         <asp:TextBox ID="_NbPlace" CssClass="form-control input-sm" runat="server"></asp:TextBox>
@@ -553,7 +559,7 @@
                                         <asp:TextBox ID="_ChargeUtile" CssClass="form-control input-sm" runat="server"></asp:TextBox>
                                     </div>
                                 </div>
-                                  <div class="form-group">
+                                <div class="form-group">
                                     <label class="control-label col-sm-4" for="email">Poid vide:</label>
                                     <div class="col-sm-6">
                                         <asp:TextBox ID="_PoidVd" CssClass="form-control input-sm" runat="server"></asp:TextBox>
@@ -571,24 +577,24 @@
                                         <asp:TextBox ID="_Valeurvénal" CssClass="form-control input-sm" runat="server"></asp:TextBox>
                                     </div>
                                 </div>
-                                  <div class="form-group">
+                                <div class="form-group">
                                     <label class="control-label col-sm-4" for="email">Contrat:</label>
                                     <div class="col-sm-6">
                                         <asp:TextBox ID="_Contrat" CssClass="form-control input-sm" runat="server"></asp:TextBox>
                                     </div>
                                 </div>
-                         <div class="form-group">
+                                <div class="form-group">
                                     <label class="control-label col-sm-4" for="email">Compagnie:</label>
                                     <div class="col-sm-6">
                                         <asp:TextBox ID="_Compagnie" CssClass="form-control input-sm" runat="server"></asp:TextBox>
                                     </div>
                                 </div>
                             </div>
-                    <div class="col-md-4 form-horizontal">
+                            <div class="col-md-4 form-horizontal">
                                 <div class="form-group">
                                     <label class="control-label col-sm-4" for="email">Usage:</label>
                                     <div class="col-sm-6">
-                                      <asp:TextBox ID="_Usage" CssClass="form-control input-sm" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="_Usage" CssClass="form-control input-sm" runat="server"></asp:TextBox>
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -603,7 +609,7 @@
                                         <asp:TextBox ID="_DPMC" CssClass="form-control input-sm" runat="server"></asp:TextBox>
                                     </div>
                                 </div>
-                                  <div class="form-group">
+                                <div class="form-group">
                                     <label class="control-label col-sm-4" for="email">Nombre debout:</label>
                                     <div class="col-sm-6">
                                         <asp:TextBox ID="_NbrDebout" CssClass="form-control input-sm" runat="server"></asp:TextBox>
@@ -621,10 +627,10 @@
                                         <asp:TextBox ID="_PTAC" CssClass="form-control input-sm" runat="server"></asp:TextBox>
                                     </div>
                                 </div>
-                                  <div class="form-group">
+                                <div class="form-group">
                                     <label class="control-label col-sm-4" for="email">Charge Utile:</label>
                                     <div class="col-sm-6">
-                                       <asp:TextBox ID="_ChargeUtil" CssClass="form-control input-sm" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="_ChargeUtil" CssClass="form-control input-sm" runat="server"></asp:TextBox>
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -639,20 +645,81 @@
                                         <asp:TextBox ID="_DateReleve" CssClass="form-control input-sm" runat="server"></asp:TextBox>
                                     </div>
                                 </div>
-                               
+
                             </div>
                         </div>
                         <br />
                     </div>
 
+                    <!-- Menu Garanties -->
+                    <div id="menu5" class="tab-pane">
+                        <br />
+                        <div class="row">
+                            <div class="col-md-7">
+                                <fieldset>
+                                    <legend>Garanties</legend>
+                                    <table class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>N°</th>
+                                                <th>Garantie</th>
+                                                <th>Capital</th>
+                                                <th>Franchise</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>Responsabilité Civile</td>
+                                                <td><asp:Label ID="LabelCapital1" runat="server" Text=""></asp:Label></td>
+                                                <td><asp:Label ID="LabelFrancise1" runat="server" Text=""></asp:Label></td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>Défenses et Recours</td>
+                                                <td><asp:Label ID="LabelCapital2" runat="server" Text=""></asp:Label></td>
+                                                <td><asp:Label ID="LabelFrancise2" runat="server" Text=""></asp:Label></td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>Vol</td>
+                                                <td><asp:Label ID="LabelCapital3" runat="server" Text=""></asp:Label></td>
+                                                <td><asp:Label ID="LabelFrancise3" runat="server" Text=""></asp:Label></td>
+                                            </tr>
+                                            <tr>
+                                                <td>4</td>
+                                                <td>Incendie</td>
+                                                <td><asp:Label ID="LabelCapital4" runat="server" Text=""></asp:Label></td>
+                                                <td><asp:Label ID="LabelFrancise4" runat="server" Text=""></asp:Label></td>
+                                            </tr>
+                                            <tr>
+                                                <td>5</td>
+                                                <td>Personnes Transportées</td>
+                                                <td><asp:Label ID="LabelCapital5" runat="server" Text=""></asp:Label></td>
+                                                <td><asp:Label ID="LabelFrancise5" runat="server" Text=""></asp:Label></td>
+                                            </tr>
+                                            <tr>
+                                                <td>6</td>
+                                                <td>Dommages aux Véhicules</td>
+                                                <td><asp:Label ID="LabelCapital6" runat="server" Text=""></asp:Label></td>
+                                                <td><asp:Label ID="LabelFrancise6" runat="server" Text=""></asp:Label></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </fieldset>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Menu Sinistre -->
                     <div id="menu6" class="tab-pane">
                         <br />
                         <div class="row">
-                    <div class="col-md-4 form-horizontal">
+                            <div class="col-md-4 form-horizontal">
                                 <div class="form-group">
                                     <label class="control-label col-sm-4" for="email">Experts:</label>
                                     <div class="col-sm-6">
-                                      
+
                                         <asp:TextBox ID="_S_Experts" CssClass="form-control input-sm" runat="server"></asp:TextBox>
                                     </div>
                                 </div>
@@ -678,33 +745,33 @@
                                     <label class="control-label col-sm-4" for="email">Indemnisé:</label>
                                     <div class="col-sm-6">
                                         <label class="radio-inline">
-                                    <input type="radio" name="optradio">Oui</label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="optradio">Non</label>
+                                            <input type="radio" name="optradio">Oui</label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="optradio">Non</label>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label col-sm-4" for="email">IDA:</label>
                                     <div class="col-sm-6">
                                         <label class="radio-inline">
-                                    <input type="radio" name="optradio">Oui</label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="optradio">Non</label>
+                                            <input type="radio" name="optradio">Oui</label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="optradio">Non</label>
                                     </div>
                                 </div>
-                                
-                                
-                               
-                                </div>
-                            
-                    <div class="col-md-4 form-horizontal">
+
+
+
+                            </div>
+
+                            <div class="col-md-4 form-horizontal">
                                 <div class="form-group">
                                     <label class="control-label col-sm-4" for="email">Garage:</label>
                                     <div class="col-sm-6">
                                         <label class="radio-inline">
-                                    <input type="radio" name="optradio">Oui</label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="optradio">Non</label>
+                                            <input type="radio" name="optradio">Oui</label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="optradio">Non</label>
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -737,15 +804,15 @@
                                         <asp:TextBox ID="_S_CompagnieAdv" CssClass="form-control input-sm" runat="server"></asp:TextBox>
                                     </div>
                                 </div>
-                            
+
                             </div>
 
 
-                    <div class="col-md-4 form-horizontal">
+                            <div class="col-md-4 form-horizontal">
                                 <div class="form-group">
                                     <label class="control-label col-sm-4" for="email">Date Sinistre:</label>
                                     <div class="col-sm-6">
-                                      <asp:TextBox ID="_S_DateSinistre" CssClass="form-control input-sm" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="_S_DateSinistre" CssClass="form-control input-sm" runat="server"></asp:TextBox>
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -766,8 +833,8 @@
                                         <asp:TextBox ID="_S_VehiculeAdverse" CssClass="form-control input-sm" runat="server"></asp:TextBox>
                                     </div>
                                 </div>
-                                
-                               
+
+
                             </div>
                         </div>
                         <br />

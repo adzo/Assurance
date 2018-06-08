@@ -22,9 +22,13 @@ namespace AssuranceWebAspNet.Pages.Assurance
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            this.LoadDropDawnListContractView();
-            this.LoadDropDownListGarantieView();
-            this.LoadDropDownListSinistreView();
+            if (!IsPostBack)
+            {
+                this.LoadDropDawnListContractView();
+                this.LoadDropDownListGarantieView();
+                this.LoadDropDownListSinistreView();
+            }
+            
            
                
                 foreach (Control c in this.Controls)
@@ -218,7 +222,9 @@ namespace AssuranceWebAspNet.Pages.Assurance
             Javascript.ConsoleLog("Garagiste : "+Garagiste.FirstName+Garagiste.LastName+Garagiste.Role);
             UserAccount Expert = u.Users.Find(idExpert);
             Javascript.ConsoleLog("Expert : " + Expert.FirstName + Expert.LastName + Expert.Role);
-            s.GarageExperts.Add(Garagiste);
+            if (RadioButtonList_Garage.SelectedValue.Equals("1")){
+                s.GarageExperts.Add(Garagiste);
+            }
             s.GarageExperts.Add(Expert);
             s.Contrat = u.Contrats.Find(idContrat);
 
@@ -266,6 +272,7 @@ namespace AssuranceWebAspNet.Pages.Assurance
         {
             //Enregistrement du contrat
             Contrat c = new Contrat();
+            c.ContratName = _CContrat.Text;
             c.Compagnie = _CCompagnie.Text;
             c.Agence = _CAgence.Text;
             c.Categorie = _CCategorie.Text;

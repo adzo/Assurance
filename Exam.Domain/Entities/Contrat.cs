@@ -13,6 +13,7 @@ namespace Exam.Domain.Entities
         [Key]
         [ForeignKey("Vehicule")]
         public int ContratId { get; set; }
+        public string ContratName { get; set; }
         public string Compagnie { get; set; }
         public string Agence { get; set; }
         public string Categorie { get; set; }

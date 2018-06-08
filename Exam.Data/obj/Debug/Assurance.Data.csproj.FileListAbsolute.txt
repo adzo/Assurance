@@ -16,3 +16,4 @@ D:\Boulot\Exam\Exam.Data\obj\Debug\Exam.Data.Migrations.createDatabase.resources
 D:\Boulot\Exam\Exam.Data\obj\Debug\Assurance.Data.csproj.GenerateResource.cache
 D:\Boulot\Exam\Exam.Data\obj\Debug\Exam.Data.Migrations.removeDateSinistre.resources
 D:\Boulot\Exam\Exam.Data\obj\Debug\Exam.Data.Migrations.updateRelationTableUserSinistre.resources
+D:\Boulot\Exam\Exam.Data\obj\Debug\Exam.Data.Migrations.lastupdate.resources

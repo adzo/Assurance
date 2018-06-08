@@ -99,3 +99,4 @@ D:\Boulot\Exam\AssuranceWebAspNet\bin\Service.Pattern.pdb
 D:\Boulot\Exam\AssuranceWebAspNet\bin\EntityFramework.xml
 D:\Boulot\Exam\AssuranceWebAspNet\bin\EntityFramework.SqlServer.dll
 D:\Boulot\Exam\AssuranceWebAspNet\bin\EntityFramework.SqlServer.xml
+D:\Boulot\Exam\AssuranceWebAspNet\bin\AjaxControlToolkit.dll
