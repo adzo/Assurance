@@ -83,7 +83,7 @@ namespace AssuranceWebAspNet.Pages.Centre
             UserAccount Expert = usr.Users.Find(idExpert);
             s.GarageExperts.Add(Expert);
             s.Contrat = usr.Contrats.Find(idContrat);
-            s.Phase = "Expertise";
+            s.Phase = "Affectation Garage";
             s.Etat = "En cours";
             Javascript.ConsoleLog(s.Contrat.Souscripteur.Nom);
             usr.Sinistres.Add(s);

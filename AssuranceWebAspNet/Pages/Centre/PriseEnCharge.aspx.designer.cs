@@ -874,7 +874,7 @@ namespace AssuranceWebAspNet.Pages.Centre {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox _S_Experts;
+        protected global::System.Web.UI.WebControls.Label _S_Experts;
         
         /// <summary>
         /// _S_Immatriculation control.
@@ -883,7 +883,7 @@ namespace AssuranceWebAspNet.Pages.Centre {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox _S_Immatriculation;
+        protected global::System.Web.UI.WebControls.Label _S_Immatriculation;
         
         /// <summary>
         /// _S_Conducteur control.
@@ -904,13 +904,67 @@ namespace AssuranceWebAspNet.Pages.Centre {
         protected global::System.Web.UI.WebControls.TextBox _S_Nature;
         
         /// <summary>
-        /// _S_Garantie control.
+        /// RadioButtonList_Indemnite control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox _S_Garantie;
+        protected global::System.Web.UI.WebControls.RadioButtonList RadioButtonList_Indemnite;
+        
+        /// <summary>
+        /// Listitem3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListItem Listitem3;
+        
+        /// <summary>
+        /// Listitem4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListItem Listitem4;
+        
+        /// <summary>
+        /// RadioButtonList_IDA control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList RadioButtonList_IDA;
+        
+        /// <summary>
+        /// Listitem5 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListItem Listitem5;
+        
+        /// <summary>
+        /// Listitem6 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListItem Listitem6;
+        
+        /// <summary>
+        /// DropDownList_SinistreGarantieSinistre control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList_SinistreGarantieSinistre;
         
         /// <summary>
         /// _S_NumPermis control.
@@ -955,7 +1009,7 @@ namespace AssuranceWebAspNet.Pages.Centre {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox _S_DateSinistre;
+        protected global::System.Web.UI.WebControls.Label _S_DateSinistre;
         
         /// <summary>
         /// _S_DatePermis control.
@@ -983,5 +1037,23 @@ namespace AssuranceWebAspNet.Pages.Centre {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox _S_VehiculeAdverse;
+        
+        /// <summary>
+        /// DropDownList_SinistreGaragiste control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList_SinistreGaragiste;
+        
+        /// <summary>
+        /// Button_UpdateSinistre control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button_UpdateSinistre;
     }
 }

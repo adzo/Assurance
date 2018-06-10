@@ -69,6 +69,38 @@
     <Compile Include="Migrations\201806080342291_lastupdate.Designer.cs">
       <DependentUpon>201806080342291_lastupdate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201806100634094_addImages.cs" />
+    <Compile Include="Migrations\201806100634094_addImages.Designer.cs">
+      <DependentUpon>201806100634094_addImages.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806100803522_extentionToExtension.cs" />
+    <Compile Include="Migrations\201806100803522_extentionToExtension.Designer.cs">
+      <DependentUpon>201806100803522_extentionToExtension.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806100813323_ImageStatus.cs" />
+    <Compile Include="Migrations\201806100813323_ImageStatus.Designer.cs">
+      <DependentUpon>201806100813323_ImageStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806100825520_ImageRenamedImageSinistre.cs" />
+    <Compile Include="Migrations\201806100825520_ImageRenamedImageSinistre.Designer.cs">
+      <DependentUpon>201806100825520_ImageRenamedImageSinistre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806100828554_ImageSinistreAddDate.cs" />
+    <Compile Include="Migrations\201806100828554_ImageSinistreAddDate.Designer.cs">
+      <DependentUpon>201806100828554_ImageSinistreAddDate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806100831385_ImageSinistreFinalEdit.cs" />
+    <Compile Include="Migrations\201806100831385_ImageSinistreFinalEdit.Designer.cs">
+      <DependentUpon>201806100831385_ImageSinistreFinalEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806101102446_rapport.cs" />
+    <Compile Include="Migrations\201806101102446_rapport.Designer.cs">
+      <DependentUpon>201806101102446_rapport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806101126217_addVersion.cs" />
+    <Compile Include="Migrations\201806101126217_addVersion.Designer.cs">
+      <DependentUpon>201806101126217_addVersion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="UserDbContext.cs" />
     <Compile Include="Infrastructure\DatabaseFactory.cs" />
@@ -105,6 +137,30 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201806080342291_lastupdate.resx">
       <DependentUpon>201806080342291_lastupdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806100634094_addImages.resx">
+      <DependentUpon>201806100634094_addImages.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806100803522_extentionToExtension.resx">
+      <DependentUpon>201806100803522_extentionToExtension.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806100813323_ImageStatus.resx">
+      <DependentUpon>201806100813323_ImageStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806100825520_ImageRenamedImageSinistre.resx">
+      <DependentUpon>201806100825520_ImageRenamedImageSinistre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806100828554_ImageSinistreAddDate.resx">
+      <DependentUpon>201806100828554_ImageSinistreAddDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806100831385_ImageSinistreFinalEdit.resx">
+      <DependentUpon>201806100831385_ImageSinistreFinalEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806101102446_rapport.resx">
+      <DependentUpon>201806101102446_rapport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806101126217_addVersion.resx">
+      <DependentUpon>201806101126217_addVersion.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

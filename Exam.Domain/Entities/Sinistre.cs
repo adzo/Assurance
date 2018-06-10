@@ -44,6 +44,9 @@ namespace Exam.Domain.Entities
         public virtual ICollection<BonDeSortie> BonsDeSorties { get; set; }
         public virtual ICollection<Facture> Factures { get; set; }
         public virtual ICollection<Confirmation> Confirmations { get; set; }
-        
+        public virtual ICollection<ImageSinistre> Images { get; set; }
+        public virtual ICollection<Rapport> Rapports { get; set; }
+
+
     }
 }

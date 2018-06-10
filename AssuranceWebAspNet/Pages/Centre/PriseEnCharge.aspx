@@ -451,7 +451,7 @@
                         <div class="row">
                             <div class="col-md-4 form-horizontal">
                                 <div class="form-group">
-                                    <label class="control-label col-sm-4" for="email">Immatriculation:</label>
+                                    <label class="control-label col-sm-4" for="email">Matricule :</label>
                                     <div class="col-sm-6">
 
                                         <asp:TextBox ID="_Immatriculation" CssClass="form-control input-sm" runat="server"></asp:TextBox>
@@ -719,14 +719,15 @@
                                 <div class="form-group">
                                     <label class="control-label col-sm-4" for="email">Experts:</label>
                                     <div class="col-sm-6">
-
-                                        <asp:TextBox ID="_S_Experts" CssClass="form-control input-sm" runat="server"></asp:TextBox>
+                                        <asp:Label ID="_S_Experts"  runat="server" Text="Label"></asp:Label>
+                                       
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label col-sm-4" for="email">Immatriculation:</label>
                                     <div class="col-sm-6">
-                                        <asp:TextBox ID="_S_Immatriculation" CssClass="form-control input-sm" runat="server"></asp:TextBox>
+                                        <asp:Label ID="_S_Immatriculation"  runat="server" Text="Label"></asp:Label>
+                                        
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -744,19 +745,20 @@
                                 <div class="form-group">
                                     <label class="control-label col-sm-4" for="email">Indemnisé:</label>
                                     <div class="col-sm-6">
-                                        <label class="radio-inline">
-                                            <input type="radio" name="optradio">Oui</label>
-                                        <label class="radio-inline">
-                                            <input type="radio" name="optradio">Non</label>
+                                        <asp:RadioButtonList ID="RadioButtonList_Indemnite" runat="server" RepeatDirection="Horizontal" Width="300px">
+                                            <asp:ListItem id="Listitem3" runat="server" Value="1" Text="Oui" selected="true"/>
+                                            <asp:ListItem id="Listitem4" runat="server" Value="0" Text="Non" />
+                                        </asp:RadioButtonList>
+
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label col-sm-4" for="email">IDA:</label>
                                     <div class="col-sm-6">
-                                        <label class="radio-inline">
-                                            <input type="radio" name="optradio">Oui</label>
-                                        <label class="radio-inline">
-                                            <input type="radio" name="optradio">Non</label>
+                                        <asp:RadioButtonList ID="RadioButtonList_IDA" runat="server" RepeatDirection="Horizontal" Width="300px">
+                                            <asp:ListItem id="Listitem5" runat="server" Value="1" Text="Oui" selected="true"/>
+                                            <asp:ListItem id="Listitem6" runat="server" Value="0" Text="Non" />
+                                        </asp:RadioButtonList>
                                     </div>
                                 </div>
 
@@ -766,18 +768,10 @@
 
                             <div class="col-md-4 form-horizontal">
                                 <div class="form-group">
-                                    <label class="control-label col-sm-4" for="email">Garage:</label>
-                                    <div class="col-sm-6">
-                                        <label class="radio-inline">
-                                            <input type="radio" name="optradio">Oui</label>
-                                        <label class="radio-inline">
-                                            <input type="radio" name="optradio">Non</label>
-                                    </div>
-                                </div>
-                                <div class="form-group">
                                     <label class="control-label col-sm-4" for="email">Garantie sinistré:</label>
                                     <div class="col-sm-6">
-                                        <asp:TextBox ID="_S_Garantie" CssClass="form-control input-sm" runat="server"></asp:TextBox>
+                                        <asp:DropDownList ID="DropDownList_SinistreGarantieSinistre" class="form-control" runat="server">
+                                        </asp:DropDownList>
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -812,7 +806,8 @@
                                 <div class="form-group">
                                     <label class="control-label col-sm-4" for="email">Date Sinistre:</label>
                                     <div class="col-sm-6">
-                                        <asp:TextBox ID="_S_DateSinistre" CssClass="form-control input-sm" runat="server"></asp:TextBox>
+                                        <asp:Label ID="_S_DateSinistre"  runat="server" Text="Label"></asp:Label>
+                                       
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -836,6 +831,22 @@
 
 
                             </div>
+
+                            <div class="form-group">
+                                    <label class="control-label col-sm-4" for="email">Garagiste:</label>
+                                    <div class="col-sm-6">
+                                        <asp:DropDownList ID="DropDownList_SinistreGaragiste" class="form-control" runat="server">
+                                        </asp:DropDownList>
+                                    </div>
+                                </div>
+
+                             <div class="form-group">
+                                    <label class="control-label col-sm-4" for="email"></label>
+                                    <div class="col-sm-6">
+                                        <asp:Button ID="Button_UpdateSinistre" runat="server" CssClass="btn btn-info" OnClick="Button_UpdateSinistre_Click" Text="Enregistrer" />
+                                    </div>
+                                </div>
+
                         </div>
                         <br />
                     </div>

@@ -16,16 +16,21 @@ namespace Exam.Data.Configurations
             HasRequired<Contrat>(g => g.Contrat)
                 .WithMany(g => g.Sinistres)
                 .HasForeignKey<int>(g => g.ContratId);
-
-            ////One to Many Relation between Sinistre et Garage (UserAccount)
-            //HasRequired<UserAccount>(e => e.GarageExperts)
-            //    .WithMany(e => e.Sinistres)
-            //    .HasForeignKey<int>(e => e.UserAccountId);
-
+            
             //Many to One Relation between Sinistre et Bon de sortie
             HasMany<BonDeSortie>(s => s.BonsDeSorties)
                 .WithRequired(s => s.Sinistre)
                 .HasForeignKey(s => s.SinistreId);
+            //Many to One relation between SInistre et Images
+            HasMany<ImageSinistre>(s => s.Images).
+                WithRequired(s => s.Sinistre).
+                HasForeignKey(s => s.SinistreId);
+
+            //Many to One between Sinistre et Rapport
+            HasMany<Rapport>(s => s.Rapports)
+                .WithRequired(s => s.Sinistre)
+                .HasForeignKey(s => s.SinistreId);
+
             //Many to One Relation between Sinistre et Facture
             HasMany<Facture>(s => s.Factures)
                 .WithRequired(s => s.Sinistre)

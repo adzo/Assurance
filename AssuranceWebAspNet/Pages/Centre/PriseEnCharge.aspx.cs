@@ -20,68 +20,121 @@ namespace AssuranceWebAspNet.Pages.Centre
         int sinistreId;
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Request.QueryString["param1"] != null)
-            {
-                sinistreId = Int32.Parse(Request.QueryString["param1"].ToString());
-                sinis = usr.Sinistres.Find(sinistreId);
-                //Remplissage des champs:
-                //Contrat view
-                populateContratFields();
-                //Souscripteur view
-                populateSouscripteurFields();
-                //Assuré view
-                populateAssureFields();
-                //Garantie Views
-                List<ContratGarantie> listeGaranties = sinis.Contrat.Garanties.ToList();
-                if (listeGaranties != null)
-                {
-                    foreach(ContratGarantie c in listeGaranties)
-                    {
-                        switch (c.GarantieId)
-                        {
-                            case 1:
-                                LabelCapital1.Text = c.Capital.ToString();
-                                LabelFrancise1.Text = c.Franchise.ToString();
-                                break;
-                            case 2:
-                                LabelCapital2.Text = c.Capital.ToString();
-                                LabelFrancise2.Text = c.Franchise.ToString();
-                                break;
-                            case 3:
-                                LabelCapital3.Text = c.Capital.ToString();
-                                LabelFrancise3.Text = c.Franchise.ToString();
-                                break;
-                            case 4:
-                                LabelCapital4.Text = c.Capital.ToString();
-                                LabelFrancise4.Text = c.Franchise.ToString();
-                                break;
-                            case 5:
-                                LabelCapital5.Text = c.Capital.ToString();
-                                LabelFrancise5.Text = c.Franchise.ToString();
-                                break;
-                            case 6:
-                                LabelCapital6.Text = c.Capital.ToString();
-                                LabelFrancise6.Text = c.Franchise.ToString();
-                                break;
 
+           
+                if (Request.QueryString["param1"] != null)
+                {
+                    sinistreId = Int32.Parse(Request.QueryString["param1"].ToString());
+                    sinis = usr.Sinistres.Find(sinistreId);
+                //Remplissage des champs:
+                if (!IsPostBack)
+                {
+                    //Contrat view
+                    populateContratFields();
+                    //Sinistre View
+                    populateSinistreFields();
+                    //Souscripteur view
+                    populateSouscripteurFields();
+                    //Assuré view
+                    populateAssureFields();
+                    //Garantie Views
+                    List<ContratGarantie> listeGaranties = sinis.Contrat.Garanties.ToList();
+                    if (listeGaranties != null)
+                    {
+                        foreach (ContratGarantie c in listeGaranties)
+                        {
+                            switch (c.GarantieId)
+                            {
+                                case 1:
+                                    LabelCapital1.Text = c.Capital.ToString();
+                                    LabelFrancise1.Text = c.Franchise.ToString();
+                                    break;
+                                case 2:
+                                    LabelCapital2.Text = c.Capital.ToString();
+                                    LabelFrancise2.Text = c.Franchise.ToString();
+                                    break;
+                                case 3:
+                                    LabelCapital3.Text = c.Capital.ToString();
+                                    LabelFrancise3.Text = c.Franchise.ToString();
+                                    break;
+                                case 4:
+                                    LabelCapital4.Text = c.Capital.ToString();
+                                    LabelFrancise4.Text = c.Franchise.ToString();
+                                    break;
+                                case 5:
+                                    LabelCapital5.Text = c.Capital.ToString();
+                                    LabelFrancise5.Text = c.Franchise.ToString();
+                                    break;
+                                case 6:
+                                    LabelCapital6.Text = c.Capital.ToString();
+                                    LabelFrancise6.Text = c.Franchise.ToString();
+                                    break;
+
+                            }
                         }
                     }
                     
                 }
-                //Sinistre View
-                populateSinistreFields();
+                    
             }
-            else
-            {
-                Response.Redirect("~/Pages/Centre/ListeSinistre.aspx");
-            }
+            
+                
+            
+            
 
 
         }
 
         private void populateSinistreFields()
         {
-            
+            UserAccount expert = new UserAccount();
+            foreach(UserAccount user in sinis.GarageExperts)
+            {
+                if (user != null)
+                {
+                    if (user.Role.Equals("Expert"))
+                    {
+                        expert = user;
+                    }
+                }
+            }
+            if (expert != null)
+            {
+                _S_Experts.Text = expert.FirstName + ", " + expert.LastName;
+            }
+            else
+            {
+                _S_Experts.Text = "Not Defined";
+            }
+            _S_Immatriculation.Text = sinis.Contrat.Vehicule.Matricule;
+            _S_Conducteur.Text = sinis.Conducteur;
+            _S_NumPermis.Text = sinis.NumeroPermis;
+            _S_DateSinistre.Text = sinis.DateSinistre;
+            _S_DatePermis.Text = sinis.DateDePermis;
+            affectationGaragiste();
+
+            ICollection<ContratGarantie> listeGarantie;
+            listeGarantie = sinis.Contrat.Garanties.ToList();
+            if (listeGarantie != null)
+            {
+                DropDownList_SinistreGarantieSinistre.Items.Clear();
+                if (listeGarantie != null)
+                {
+                    foreach (ContratGarantie g in listeGarantie)
+                    {
+
+                        i = new ListItem(g.Garantie.GarantieName, g.Garantie.Id.ToString());
+                        DropDownList_SinistreGarantieSinistre.Items.Add(i);
+                    }
+                }
+                else
+                {
+                    i = new ListItem("Aucune Garantie", "1");
+                    DropDownList_SinistreGarantieSinistre.Items.Add(i);
+                }
+                    
+            }
+
         }
 
         private void populateContratFields()
@@ -158,6 +211,63 @@ namespace AssuranceWebAspNet.Pages.Centre
             _A_Sexe.Text = asur.Sexe;
         }
 
-        
+        public void affectationGaragiste()
+        {
+            List<UserAccount> listeExpertGaragiste = usr.Users.ToList();
+            if (listeExpertGaragiste != null)
+               
+            DropDownList_SinistreGaragiste.Items.Clear();
+            {
+                foreach (UserAccount u in listeExpertGaragiste)
+                {
+                    i = new ListItem(u.FirstName + ", " + u.LastName, u.UserId.ToString());
+                    switch (u.Role)
+                    {
+                        
+                        case "Garage":
+                            DropDownList_SinistreGaragiste.Items.Add(i);
+                            break;
+                        default:
+                            break;
+                    }
+                }
+            }
+        }
+
+        public void Button_UpdateSinistre_Click(object sender, EventArgs e)
+        {
+            //Update Sinistre
+            Sinistre s = new Sinistre();
+            s=usr.Sinistres.Find(sinistreId);
+            s.Conducteur = _S_Conducteur.Text;
+            s.Nature = _S_Nature.Text;
+            int i = 0;
+            Int32.TryParse(RadioButtonList_Indemnite.SelectedValue, out i);
+            s.Indemnise = Convert.ToBoolean(i);
+            s.IDA = Convert.ToBoolean(Int32.Parse(RadioButtonList_IDA.SelectedValue));
+            s.GarantieSinistre = "";
+            s.NumeroPermis = _S_NumPermis.Text;
+            s.DateDePermis = _S_DatePermis.Text;
+            i = 0;
+            Int32.TryParse(_S_PartResp.Text, out i);
+            s.PartDeResponsabilite = i;
+            i = 0;
+            Int32.TryParse(_S_MontantInd.Text, out i);
+            s.MontantIndemnisation = i;
+            s.CompagnieAdverse = _S_CompagnieAdv.Text;
+            s.DateSinistre = _S_DateSinistre.Text;
+            s.DateIndemnisation = _S_DateIndm.Text;
+            s.VehiculeAdverse = _S_VehiculeAdverse.Text;
+            s.Phase = "Expertise";
+
+            sinis = s;
+            int idGarage;
+            idGarage = Int32.Parse(DropDownList_SinistreGaragiste.SelectedItem.Value);
+            UserAccount Garagiste = usr.Users.Find(idGarage);
+            s.GarageExperts.Add(Garagiste);
+
+            usr.SaveChanges();
+
+        }
     }
 }
