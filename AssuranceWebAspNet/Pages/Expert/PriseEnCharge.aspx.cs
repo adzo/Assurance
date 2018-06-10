@@ -21,15 +21,16 @@ namespace AssuranceWebAspNet.Pages.Expert
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Request.QueryString["param1"] != null )
+            if (Request.QueryString["param1"] != null)
             {
                 sinistreId = Int32.Parse(Request.QueryString["param1"].ToString());
                 sinis = usr.Sinistres.Find(sinistreId);
                 PopulateSinistreFields(sinis);
                 LoadImages();
                 LoadRapport();
-
-
+                LoadImagesApresReparation();
+                LoadRapportFinaux();
+                populateDevisTables();
             }
             else
             {
@@ -68,7 +69,7 @@ namespace AssuranceWebAspNet.Pages.Expert
                 LabelGarantie.Text = "Non définie";
             }
             LabelNumPermis.Text = sinis.NumeroPermis;
-            LabelResponsabilite.Text = sinis.PartDeResponsabilite.ToString()+"%";
+            LabelResponsabilite.Text = sinis.PartDeResponsabilite.ToString() + "%";
             LabelMontant.Text = sinis.MontantIndemnisation.ToString();
             LabelCompagnieAdverse.Text = sinis.CompagnieAdverse;
             LabelDateSinistre.Text = sinis.DateSinistre;
@@ -77,27 +78,28 @@ namespace AssuranceWebAspNet.Pages.Expert
             LabelVehiculeAdverse.Text = sinis.VehiculeAdverse;
 
 
-            
+
         }
         public void Button_UploadImage_Click(object sender, EventArgs e)
         {
             if (FileUpload_ImageAvantReparation.HasFile)
             {
                 string extension = System.IO.Path.GetExtension(FileUpload_ImageAvantReparation.FileName);
-                if (1==1)
-                    {
+                if (1 == 1)
+                {
                     string path = Server.MapPath("../../UploadedFiles/Images/");
                     ImageSinistre img = new Exam.Domain.Entities.ImageSinistre();
                     img.Extension = extension;
-                    img.ImageLink = guid+FileUpload_ImageAvantReparation.FileName;
+                    img.ImageLink = guid + FileUpload_ImageAvantReparation.FileName;
                     img.ImageName = FileUpload_ImageAvantReparation.FileName;
                     img.Sinistre = sinis;
                     img.Status = "Avant";
                     img.DateImage = DateTime.Now.ToString("dd-MM-yyyy");
                     usr.Images.Add(img);
-                    FileUpload_ImageAvantReparation.SaveAs(path+img.ImageLink);
+                    FileUpload_ImageAvantReparation.SaveAs(path + img.ImageLink);
+                    sinis.Phase = "Envoie des devis de réparation";
                     usr.SaveChanges();
-                    }
+                }
             }
             else
             {
@@ -108,7 +110,7 @@ namespace AssuranceWebAspNet.Pages.Expert
         {
             List<ImageSinistre> list = sinis.Images.ToList();
             List<ImageSinistre> ResultList = new List<ImageSinistre>();
-            foreach(ImageSinistre img in list)
+            foreach (ImageSinistre img in list)
             {
                 if (img.Status == "Avant" && img.Sinistre.SinistreId == sinistreId)
                 {
@@ -134,7 +136,7 @@ namespace AssuranceWebAspNet.Pages.Expert
             tr.Cells.Add(cellSup);
             TableImageAvantReparation.Rows.Add(tr);
             tr = new TableRow();
-            LinkButton link,delLink;
+            LinkButton link, delLink;
             //Liste des images
             List<ImageSinistre> listeImage = listeImageAvantReparation();
             foreach (ImageSinistre img in listeImage)
@@ -153,7 +155,7 @@ namespace AssuranceWebAspNet.Pages.Expert
                 cellPhotoDate = new TableCell() { Text = img.DateImage };
                 cellSup = new TableCell();
                 delLink.Text = "Delete";
-                delLink.ID = "del"+img.ImageLink;
+                delLink.ID = "del" + img.ImageLink;
                 delLink.Click += new EventHandler(DeleteImage);
                 cellSup.Controls.Add(delLink);
 
@@ -164,23 +166,23 @@ namespace AssuranceWebAspNet.Pages.Expert
                 tr.Cells.Add(cellSup);
                 TableImageAvantReparation.Rows.Add(tr);
             }
-            
+
 
         }
         public void DeleteImage(object sender, EventArgs e)
         {
             LinkButton source = (LinkButton)sender;
-            string url = source.ID.Remove(0,3);
+            string url = source.ID.Remove(0, 3);
             ImageSinistre result = usr.Images.Where(s => s.ImageLink == url).FirstOrDefault();
-            if(result != null)
+            if (result != null)
             {
                 string path = Server.MapPath("../../UploadedFiles/Images/");
-                if ((System.IO.File.Exists(path+url)))
+                if ((System.IO.File.Exists(path + url)))
                 {
                     System.IO.File.Delete(path + url);
                 }
                 usr.Images.Remove(result);
-                    usr.SaveChanges();  
+                usr.SaveChanges();
             }
             LoadImages();
         }
@@ -194,6 +196,14 @@ namespace AssuranceWebAspNet.Pages.Expert
             ImageAvantReparationPreview.ImageUrl = "../../UploadedFiles/Images/" + source.ID;
             ModalPopupExtender1.Show();
         }
+        public void ValiderDevis(object sender, EventArgs e)
+        {
+            LinkButton source = (LinkButton)sender;
+            Devis dev = usr.Devis.Where(s => s.DevisUrl == source.ID).FirstOrDefault();
+
+            dev.Conformite = "Conforme";
+            usr.SaveChanges();
+        }
         public void Button_UploadRapport_Click(object sender, EventArgs e)
         {
             if (FileUpload_RapportExpertise.HasFile)
@@ -203,7 +213,7 @@ namespace AssuranceWebAspNet.Pages.Expert
                 string extension = System.IO.Path.GetExtension(FileUpload_RapportExpertise.FileName);
                 if (true)
                 {
-                    Rap.RapportExtension = extension;
+                    Rap.RapportExtension = "Primaire";
                     Rap.Version = sinis.Rapports.Count();
                     Rap.RapportUrl = guid + FileUpload_RapportExpertise.FileName;
                     Rap.RapportName = FileUpload_RapportExpertise.FileName;
@@ -215,7 +225,28 @@ namespace AssuranceWebAspNet.Pages.Expert
                 }
             }
         }
-
+        public void Button_UploadRapportFinal_Click(object sender, EventArgs e)
+        {
+            if (FileUpload_RapportExpertiseFinal.HasFile)
+            {
+                string path = Server.MapPath("../../UploadedFiles/RapportExpertise/");
+                Rapport Rap = new Rapport();
+                string extension = System.IO.Path.GetExtension(FileUpload_RapportExpertiseFinal.FileName);
+                if (true)
+                {
+                    Rap.RapportExtension = "Final";
+                    Rap.Version = sinis.Rapports.Count();
+                    Rap.RapportUrl = guid + FileUpload_RapportExpertiseFinal.FileName;
+                    Rap.RapportName = FileUpload_RapportExpertiseFinal.FileName;
+                    Rap.Sinistre = sinis;
+                    Rap.DateRapport = DateTime.Now.ToString("dd-MM-yyyy");
+                    usr.Rapports.Add(Rap);
+                    FileUpload_RapportExpertiseFinal.SaveAs(path + Rap.RapportUrl);
+                    sinis.Phase = "Edition Bon De Sortie";
+                    usr.SaveChanges();
+                }
+            }
+        }
         public void LoadRapport()
         {
             TableRapportExpertise.Rows.Clear();
@@ -232,7 +263,7 @@ namespace AssuranceWebAspNet.Pages.Expert
             th.Cells.Add(hRapport);
             th.Cells.Add(hDel);
             TableRapportExpertise.Rows.Add(th);
-            foreach (Rapport rap in ListeRapport())
+            foreach (Rapport rap in ListeRapport("Primaire"))
             {
                 tr = new TableRow();
                 date = new TableCell() { Text = rap.DateRapport };
@@ -250,13 +281,47 @@ namespace AssuranceWebAspNet.Pages.Expert
 
 
         }
-        public List<Rapport> ListeRapport()
+        public void LoadRapportFinaux()
         {
-            List<Rapport> All = usr.Rapports.OrderByDescending(s=>s.Version).ToList();
+            TableRapportExpertiseFinal.Rows.Clear();
+            TableHeaderCell hDate, hVersion, hRapport, hDel;
+            TableCell date, version, rapport, del;
+            TableHeaderRow th = new TableHeaderRow();
+            TableRow tr;
+            hDate = new TableHeaderCell() { Text = "Date" };
+            hVersion = new TableHeaderCell() { Text = "Version" };
+            hRapport = new TableHeaderCell() { Text = "Rapport" };
+            hDel = new TableHeaderCell() { Text = "Supprimer" };
+            th.Cells.Add(hDate);
+            th.Cells.Add(hVersion);
+            th.Cells.Add(hRapport);
+            th.Cells.Add(hDel);
+            TableRapportExpertiseFinal.Rows.Add(th);
+            foreach (Rapport rap in ListeRapport("Final"))
+            {
+                tr = new TableRow();
+                date = new TableCell() { Text = rap.DateRapport };
+                version = new TableCell() { Text = rap.Version.ToString() };
+                rapport = new TableCell() { Text = rap.RapportName };
+                del = new TableCell() { Text = "Supprimer" };
+
+                tr.Cells.Add(date);
+                tr.Cells.Add(version);
+                tr.Cells.Add(rapport);
+                tr.Cells.Add(del);
+                TableRapportExpertiseFinal.Rows.Add(tr);
+
+            }
+            
+
+        }
+        public List<Rapport> ListeRapport(string type)
+        {
+            List<Rapport> All = usr.Rapports.OrderByDescending(s => s.Version).ToList();
             List<Rapport> resultList = new List<Rapport>();
             foreach (Rapport r in All)
             {
-                if (r.SinistreId == sinistreId)
+                if (r.SinistreId == sinistreId && r.RapportExtension.Equals(type))
                 {
                     resultList.Add(r);
                 }
@@ -265,6 +330,126 @@ namespace AssuranceWebAspNet.Pages.Expert
             return resultList;
 
         }
+        public void LoadImagesApresReparation()
+        {
+            TableImageApresReparation.Rows.Clear();
+            TableCell cellID, cellPhotoName, cellPhotoDate, cellConsult;
+            TableRow tr = new TableRow();
+            cellID = new TableCell() { Text = "N°" };
+            cellPhotoName = new TableCell() { Text = "Name" };
+            cellPhotoDate = new TableCell() { Text = "Date" };
+            cellConsult = new TableCell() { Text = "Consulter" };
+            
+            tr.Cells.Add(cellID);
+            tr.Cells.Add(cellPhotoName);
+            tr.Cells.Add(cellPhotoDate);
+            tr.Cells.Add(cellConsult);
 
+            TableImageApresReparation.Rows.Add(tr);
+            tr = new TableRow();
+            LinkButton link, delLink;
+            //Liste des images
+            List<ImageSinistre> listeImage = listeImageApresReparation();
+            foreach (ImageSinistre img in listeImage)
+            {
+                tr = new TableRow();
+                link = new LinkButton();
+                delLink = new LinkButton();
+
+                link.ID = img.ImageLink;
+                link.Text = "Consulter";
+                link.Click += new EventHandler(LoadImageIntoPopup);
+                cellConsult = new TableCell();
+                cellConsult.Controls.Add(link);
+                cellID = new TableCell() { Text = "N°" };
+                cellPhotoName = new TableCell() { Text = img.ImageName };
+                cellPhotoDate = new TableCell() { Text = img.DateImage };
+              
+                tr.Cells.Add(cellID);
+                tr.Cells.Add(cellPhotoName);
+                tr.Cells.Add(cellPhotoDate);
+                tr.Cells.Add(cellConsult);
+
+                TableImageApresReparation.Rows.Add(tr);
+            }
+
+
+        }
+        private List<ImageSinistre> listeImageApresReparation()
+        {
+            List<ImageSinistre> list = sinis.Images.ToList();
+            List<ImageSinistre> ResultList = new List<ImageSinistre>();
+            foreach (ImageSinistre img in list)
+            {
+                if (img.Status == "Aprés" && img.SinistreId == sinistreId)
+                {
+                    ResultList.Add(img);
+                }
+            }
+            return ResultList;
+        }
+
+        //public void Button_ConfirmationDevis_Click(object sender, EventArgs e)
+        //{
+        //    Javascript.ConsoleLog("clicked confirmer Devis");
+        //    foreach(Control c in Page.Controls)
+        //    {
+        //        foreach(Control childc in c.Controls)
+        //        {
+        //            if (childc is DropDownList)
+        //            {
+        //                Devis dev = usr.Devis.Find(((DropDownList)c).SelectedValue);
+        //                dev.Conformite = ((DropDownList)c).SelectedItem.Text;
+        //                usr.SaveChanges();
+        //            }
+        //        } 
+        //    }
+        //}
+        public void populateDevisTables()
+        {
+            TableDevis.Rows.Clear();
+            TableHeaderRow th = new TableHeaderRow();
+            TableHeaderCell cellDateH, cellConformiteH, cellDevisH;
+            TableRow tr;
+            TableCell cellDate, cellConformite, cellDevis;
+            cellDateH = new TableHeaderCell() { Text = "Date" };
+            cellConformiteH = new TableHeaderCell() { Text = "Conformité" };
+            cellDevisH = new TableHeaderCell() { Text = "Devis" };
+            th.Cells.Add(cellDateH);
+            th.Cells.Add(cellConformiteH);
+            th.Cells.Add(cellDevisH);
+            TableDevis.Rows.Add(th);
+            LinkButton link;
+            if (listeDevis() != null)
+            {
+                foreach(Devis dev in listeDevis())
+                {
+                    if(dev.Conformite == null || dev.Conformite == "Non conforme")
+                    {
+                        tr = new TableRow();
+                        link = new LinkButton();
+                        link.ID = dev.DevisUrl;
+                        link.Text = "Valider";
+                        link.Click += new EventHandler(ValiderDevis);
+                        cellDate = new TableCell() { Text = dev.DateDevis };
+                        cellConformite = new TableCell();
+
+                        cellConformite.Controls.Add(link);
+                        cellDevis = new TableCell() { Text = "Devis" };
+                        tr.Cells.Add(cellDate);
+                        tr.Cells.Add(cellConformite);
+                        tr.Cells.Add(cellDevis);
+                        TableDevis.Rows.Add(tr);
+                    }
+                    
+                }
+            }
+
+        }
+        private List<Devis> listeDevis()
+        {
+            
+            return sinis.Devis.ToList();
+        }
     }
 }

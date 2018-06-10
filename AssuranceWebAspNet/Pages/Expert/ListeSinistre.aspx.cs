@@ -96,7 +96,7 @@ namespace AssuranceWebAspNet.Pages.Expert
                 }
                 if(s.Phase != null)
                 {
-                    if (s.Phase.Equals("Reparation") || s.Phase.Equals("Expertise") || s.Phase.Equals("Confirmation de devis") || s.Phase.Equals("Confirmation de reparation"))
+                    if (s.Phase.Equals("Reparation") || s.Phase.Equals("Expertise") || s.Phase.Equals("Confirmation de devis") || s.Phase.Equals("Confirmation de reparation")  || s.Phase.Equals("Envoie des devis de réparation"))
                     {
                         tr = new TableRow();
 

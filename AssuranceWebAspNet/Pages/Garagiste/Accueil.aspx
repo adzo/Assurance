@@ -17,7 +17,7 @@
       <div class="container">
           <div class="row">
               <div class="col-md-4">
-                  <a href="PriseCharge.aspx" > <div class="thumbnail pull-right" style="width:60%;height:auto"><img src="../../../img/imgAccueil/voit.jpg" class="img-rounded img-responsive"  /><div class="caption"><h4 class="text-center"><b>Prise en charge</b></h4></div></div></a>
+                  <a href="listeSinistre.aspx" > <div class="thumbnail pull-right" style="width:60%;height:auto"><img src="../../../img/imgAccueil/voit.jpg" class="img-rounded img-responsive"  /><div class="caption"><h4 class="text-center"><b>Prise en charge</b></h4></div></div></a>
               </div>
                <div class="col-md-4">
                   <a href="Historiques.aspx" > <div class="thumbnail centered" style="width:60%;height:auto"><img src="../../../img/imgAccueil/hist.jpg" class="img-rounded img-responsive"  /><div class="caption"><h4 class="text-center"><b>Historiques</b></h4></div></div></a>

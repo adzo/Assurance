@@ -31,6 +31,11 @@ namespace Exam.Data.Configurations
                 .WithRequired(s => s.Sinistre)
                 .HasForeignKey(s => s.SinistreId);
 
+            //Many to One relation between Sinistre et Devis
+            HasMany<Devis>(s => s.Devis)
+                .WithRequired(s => s.Sinistre)
+                .HasForeignKey(s => s.SinistreId);
+
             //Many to One Relation between Sinistre et Facture
             HasMany<Facture>(s => s.Factures)
                 .WithRequired(s => s.Sinistre)

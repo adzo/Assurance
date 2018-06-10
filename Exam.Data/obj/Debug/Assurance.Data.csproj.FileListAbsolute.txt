@@ -25,3 +25,5 @@ D:\Boulot\Exam\Exam.Data\obj\Debug\Exam.Data.Migrations.ImageSinistreAddDate.res
 D:\Boulot\Exam\Exam.Data\obj\Debug\Exam.Data.Migrations.ImageSinistreFinalEdit.resources
 D:\Boulot\Exam\Exam.Data\obj\Debug\Exam.Data.Migrations.rapport.resources
 D:\Boulot\Exam\Exam.Data\obj\Debug\Exam.Data.Migrations.addVersion.resources
+D:\Boulot\Exam\Exam.Data\obj\Debug\Exam.Data.Migrations.devisTable.resources
+D:\Boulot\Exam\Exam.Data\obj\Debug\Exam.Data.Migrations.devisTableEditConformity.resources

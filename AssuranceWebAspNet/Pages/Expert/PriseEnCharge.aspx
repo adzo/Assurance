@@ -229,11 +229,70 @@
 
                     <!-- Menu Devis -->
                     <div id="menu3" class="tab-pane fade">
+                        <asp:Table ID="TableDevis" runat="server" Width="90%"> 
+                            </asp:Table>
 
+                         
                     </div>
                     <!-- Menu Rapport Final -->
                     <div id="menu4" class="tab-pane fade">
+                        
+                        <br />
+                        <div class="row">
+                            <!-- Upload des images aprés réparation -->
+                            <div class="col-md-6 form-horizontal" style="border-right:1px solid black">
 
+                                
+                                <div class="form-group">
+                                    <label class="control-label col-sm-4" for="email">Photo Aprés réparation :</label>
+                                    
+                                    </div>
+                                
+                                <div class="form-group" hidden="hidden">
+                                    
+                                    <div class="col-sm-4">
+                                        <asp:Button ID="Button3" runat="server" CssClass="btn btn-info"  Text="Preview" />
+                                    </div>
+
+                                </div>
+                                <br />
+                                <asp:Table ID="TableImageApresReparation" runat="server" Width="90%"> 
+
+                            </asp:Table>
+                            </div>
+                            <!-- Upload des Rapport finaux -->
+                            <div class="col-md-6 form-horizontal">
+                                <div class="form-group">
+                                    <label class="control-label col-sm-4" for="email">Rapport d'expertise final :</label>
+                                    
+                                    </div>
+                                <div class="form-group">
+                                    <div class="col-sm-1">
+                                        <span></span>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <asp:FileUpload ID="FileUpload_RapportExpertiseFinal" runat="server" CssClass="form-control input-sm" />
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <asp:Button ID="Button_UploadRapportFinal" runat="server" CssClass="btn btn-info" OnClick="Button_UploadRapportFinal_Click" Text="Archiver" />
+                                    </div>
+
+                                </div>
+                                <div class="form-group" hidden="hidden" >
+                                    
+                                    <div class="col-sm-4">
+                                        <asp:Button ID="Button5" runat="server" CssClass="btn btn-info"  Text="Preview" />
+                                    </div>
+
+                                </div>
+                                <br />
+                                <asp:Table ID="TableRapportExpertiseFinal" runat="server" Width="90%"> 
+
+                                </asp:Table>
+                            </div>
+                        </div>
+                        
+                    
                     </div>
                 </div>
             </div>

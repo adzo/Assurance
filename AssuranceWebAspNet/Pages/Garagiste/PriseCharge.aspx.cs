@@ -13,71 +13,96 @@ using System.Web.UI.WebControls;
 public partial class GaragistePriseCharge : System.Web.UI.Page
 {
     StringBuilder table = new StringBuilder();
-    
+    string guid = Guid.NewGuid().ToString();
+    int sinistreId;
+    Sinistre sinis = new Sinistre();
+    UserDbContext usr = new UserDbContext();
 
     protected void Page_Load(object sender, EventArgs e)
     {
         
-        if (IsPostBack)
-        {
-            int idSinistre=0;
-            if(Int32.TryParse(TextBox1_Sinistre.Text,out idSinistre))
+            if (Request.QueryString["param1"] != null)
             {
-                Javascript.ConsoleLog("Conversion succeeded, your number is :"+idSinistre);
-                Session["sinistreId"] = idSinistre;
-                //Response.Redirect("Detail.aspx");
-                Javascript.ConsoleLog("Sinistre passé est: " + Session["sinistreId"].ToString());
+                sinistreId = Int32.Parse(Request.QueryString["param1"].ToString());
+                sinis = usr.Sinistres.Find(sinistreId);
+                PopulateSinistreFields(sinis);
+                //LoadImages();
+                //LoadRapport();
+                //LoadImagesApresReparation();
+                //LoadRapportFinaux();
             }
             else
             {
-                Javascript.ConsoleLog("Conversion impossible, veuillez saisir un numero");
-
+                Response.Redirect("ListeSinistre.aspx");
             }
-            
-        }
+            //populateSinistreFields();
+            Javascript.ConsoleLog(sinistreId.ToString());
+        
+        
     }
 
-    protected void Button_RechercheSinistre_Click(object sender, EventArgs e)
+    private void PopulateSinistreFields(Sinistre sinis)
     {
-        using (UserDbContext context = new UserDbContext())
+        LabelConducteur.Text = sinis.Conducteur;
+        LabelMatricule.Text = sinis.Contrat.Vehicule.Matricule;
+        LabelNature.Text = sinis.Nature;
+        
+        if (sinis.IDA)
         {
-            var Assures = context.Assures.ToList();
-            Session["assurees"] = Assures;
-            if (Assures != null)
-            {
-                table.Append(" <table class=\"table\"><tr><th>Type</th><th>Nom</th><th>Preom</th><th>Date de Naissance</th></tr>");
-                foreach(var assure in Assures)
-                {
-                    table.Append("<tr>");
-                    table.Append("<th>");
-                    table.Append(assure.TypeAssure);
-                    table.Append("</th>");
-                    table.Append("<th>");
-                    table.Append(assure.Nom);
-                    table.Append("</th>");
-                    table.Append("<th>");
-                    table.Append(assure.Prenom);
-                    table.Append("</th>");
-                    table.Append("<th>");
-                    table.Append(assure.DateDeNaissance);
-                    table.Append("</th>");
-                    table.Append("</tr>");
-                }
-                table.Append("</table>");
-                var listAssures = (List<Assure>)Session["assurees"];
-                int i = 1;
-                foreach (Assure assure in listAssures)
-                {
-                    table.Append("<br/><p>" + i + ":  " + assure.Nom + " " + assure.Prenom + "</p>");
-                    i++;
-                }
-                PlaceHolder1.Controls.Add(new Literal { Text = table.ToString() });
-            }
-            else
-            {
-                PlaceHolder1.Controls.Add(new Literal { Text = "Table assurés vide" });
-            }
+            LabelIDA.Text = "Oui";
+        }
+        else
+        {
+            LabelIDA.Text = "Non";
+        }
+        if (sinis.GarantieSinistre != null)
+        {
+            LabelGarantie.Text = sinis.GarantieSinistre;
+        }
+        else
+        {
+            LabelGarantie.Text = "Non définie";
+        }
+        LabelNumPermis.Text = sinis.NumeroPermis;
+        LabelResponsabilite.Text = sinis.PartDeResponsabilite.ToString() + "%";
+        
+        LabelCompagnieAdverse.Text = sinis.CompagnieAdverse;
+        LabelDateSinistre.Text = sinis.DateSinistre;
+        
+        LabelVehiculeAdverse.Text = sinis.VehiculeAdverse;
 
+    }
+
+    public void Button_RechercheSinistre_Click(object sender, EventArgs e)
+    {
+        int Id;
+        if(Int32.TryParse(TextBox1_Sinistre.Text,out Id))
+        {
+            Response.Redirect("../../Pages/Garagiste/Prisecharge.aspx?param1=" + Id);
+        }
+        
+    }
+
+    public void ButtonUploadDevis_Click(object sender, EventArgs e)
+    {
+        if (FileUpload_Devis.HasFile)
+        {
+            string path = Server.MapPath("../../UploadedFiles/Devis/");
+            Devis dev = new Devis();
+            string extension = System.IO.Path.GetExtension(FileUpload_Devis.FileName);
+            if (true)
+            {
+                dev.Sinistre = sinis;
+                dev.DevisUrl = guid + FileUpload_Devis.FileName;
+                dev.Conformite = null;
+                dev.Sinistre = sinis;
+                dev.DateDevis = DateTime.Now.ToString("dd-MM-yyyy");
+                usr.Devis.Add(dev);
+                FileUpload_Devis.SaveAs(path + dev.DevisUrl);
+                sinis.Phase = "Confirmation de devis";
+                usr.SaveChanges();
+            }
         }
     }
+
 }

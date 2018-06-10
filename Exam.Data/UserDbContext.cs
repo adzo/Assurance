@@ -27,7 +27,7 @@ namespace Exam.Data
         public DbSet<ContratGarantie> ContratsGarantie { get; set; }
         public DbSet<ImageSinistre> Images { get; set; }
         public DbSet<Rapport> Rapports { get; set; }
-
+        public DbSet<Devis> Devis { get; set; }
 
 
 

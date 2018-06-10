@@ -48,6 +48,7 @@
     <Compile Include="Entities\Contact.cs" />
     <Compile Include="Entities\Contrat.cs" />
     <Compile Include="Entities\ContratGarantie.cs" />
+    <Compile Include="Entities\Devis.cs" />
     <Compile Include="Entities\Facture.cs" />
     <Compile Include="Entities\Garantie.cs" />
     <Compile Include="Entities\ImageSinistre.cs" />

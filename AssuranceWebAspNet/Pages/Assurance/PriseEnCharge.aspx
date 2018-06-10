@@ -31,7 +31,7 @@
                         <asp:TextBox ID="_TxtNumContrat" CssClass="form-control input-group-sm" runat="server" placeholder="Numéro de contrat"></asp:TextBox>
                       
                     </div>
-                    <asp:Button ID="btnChercher" CssClass="btn btn-info" runat="server"  Text="Recherche" />
+                    <asp:Button ID="btnChercher" CssClass="btn btn-info" runat="server" OnClick="btnChercher_Click"  Text="Recherche" />
                 </div>
                     </div>
                 <div class="row" visible="false" id="res" runat="server">

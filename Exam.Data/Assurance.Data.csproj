@@ -101,6 +101,14 @@
     <Compile Include="Migrations\201806101126217_addVersion.Designer.cs">
       <DependentUpon>201806101126217_addVersion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201806101328453_devisTable.cs" />
+    <Compile Include="Migrations\201806101328453_devisTable.Designer.cs">
+      <DependentUpon>201806101328453_devisTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806101438430_devisTableEditConformity.cs" />
+    <Compile Include="Migrations\201806101438430_devisTableEditConformity.Designer.cs">
+      <DependentUpon>201806101438430_devisTableEditConformity.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="UserDbContext.cs" />
     <Compile Include="Infrastructure\DatabaseFactory.cs" />
@@ -161,6 +169,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201806101126217_addVersion.resx">
       <DependentUpon>201806101126217_addVersion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806101328453_devisTable.resx">
+      <DependentUpon>201806101328453_devisTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806101438430_devisTableEditConformity.resx">
+      <DependentUpon>201806101438430_devisTableEditConformity.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
