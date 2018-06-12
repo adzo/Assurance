@@ -40,7 +40,7 @@ namespace Exam.Domain.Entities
         
         //Navigation property
         public virtual ICollection<Sinistre> Sinistres { get; set; }
-
+        public virtual Assure Assure { get; set; }
 
     }
 }

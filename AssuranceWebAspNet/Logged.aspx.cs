@@ -15,6 +15,7 @@ namespace AssuranceWebAspNet.Pages
             //VerifyIdentity.Verify.verifyConnected();
             if (Session["Role"] != null)
             {
+                Session["target"] = null;
                 if (Session["Role"].ToString() == "Assurance")
                 {
                     if (Session["target"] != null){
@@ -29,7 +30,7 @@ namespace AssuranceWebAspNet.Pages
                         Response.Redirect(Session["target"].ToString());
                     }
                     Javascript.ConsoleLog("Centre d'expertise connected");
-                    Response.Redirect("/Pages/Garagiste/Accueil");
+                    Response.Redirect("/Pages/Centre/Accueil");
                 }
                 else if (Session["Role"].ToString() == "Expert")
                 {
@@ -37,15 +38,20 @@ namespace AssuranceWebAspNet.Pages
                         Response.Redirect(Session["target"].ToString());
                     }
                     Javascript.ConsoleLog("Exert connected");
-                    Response.Redirect("/Pages/Garagiste/Accueil");
+                    Response.Redirect("/Pages/Expert/Accueil");
                 }
                 else if (Session["Role"].ToString().Equals("Garage") )
                 {
-                    //if (Session["target"] != null){
-                    //    Response.Redirect(Session["target"].ToString());
-                    //}
+                    if (Session["target"] != null)
+                    {
+                        Response.Redirect(Session["target"].ToString());
+                    }
                     Javascript.ConsoleLog("Garagiste connected");
                     Response.Redirect("/Pages/Garagiste/Accueil");
+                }
+                else if(Session["Role"].ToString() == "Assure")
+                {
+                    Response.Redirect("/Pages/Assure/Home");
                 }
             }
             

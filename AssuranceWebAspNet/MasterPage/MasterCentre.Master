@@ -52,7 +52,7 @@
                 </div>
 
                 <!--logo start-->
-                <a href="Accueil.aspx" class="logo"><img src="../img/logo.png" class="img-responsive" style="height:40px;width:auto" /></a>
+                <a href="Accueil.aspx" class="logo"><img src="../../img/logo.png" class="img-responsive" style="height:40px;width:auto" /></a>
                 <!--logo end-->
 
 
@@ -61,6 +61,10 @@
                     <!-- notificatoin dropdown start-->
                     <ul class="nav pull-right top-menu">
 
+                         <li>
+
+                             <asp:Label ID="ConnectedUser" runat="server" Text="Label"></asp:Label>
+                         </li>
 
 
                         <!-- alert notification start-->
@@ -113,7 +117,7 @@
                         <li class="dropdown">
                             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                                 <span class="profile-ava">
-                                    <img alt="" src="img/avatar1_small.jpg">
+                                    <img alt="" src="../../img/avatar1_small.jpg">
                                 </span>
                                 <span class="username">
                                     <asp:Label ID="lblname" runat="server" Text=""></asp:Label></span>
@@ -126,7 +130,7 @@
                                 </li>
 
                                 <li>
-                                    <a href="../GGCLogin.aspx"><i class="icon_key_alt"></i>Déconnexion</a>
+                                    <a href="../../Logout.aspx"><i class="icon_key_alt"></i>Déconnexion</a>
                                 </li>
                             </ul>
                         </li>
@@ -151,17 +155,12 @@
 
 
                         <li>
-                            <a class="" href="PriseCharge.aspx">
+                            <a class="" href="PriseEnCharge.aspx">
                                 <i class="icon_genius"></i>
                                 <span>Prise en charge</span>
                             </a>
                         </li>
-                          <li>
-                            <a class="" href="Historiques.aspx">
-                                <i class="icon_genius"></i>
-                                <span>Historiques</span>
-                            </a>
-                        </li>
+                          
                           <li>
                             <a class="" href="Experts.aspx">
                                 <i class="icon_genius"></i>
@@ -174,18 +173,13 @@
                                 <span>Garages</span>
                             </a>
                         </li>
-  <li>
-                            <a class="" href="Notifications.aspx">
+                        <li>
+                            <a class="" href="Assures.aspx">
                                 <i class="icon_genius"></i>
-                                <span>Notifications</span>
+                                <span>Assurés</span>
                             </a>
                         </li>
-                          <li>
-                            <a class="" href="Statistiques.aspx">
-                                <i class="icon_genius"></i>
-                                <span>Statistiques</span>
-                            </a>
-                        </li>
+  
 
 
 

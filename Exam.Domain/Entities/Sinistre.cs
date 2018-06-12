@@ -28,7 +28,6 @@ namespace Exam.Domain.Entities
         public Sinistre()
         {
             GarageExperts = new List<UserAccount>();
-            BonsDeSorties = new List<BonDeSortie>();
             Factures = new List<Facture>();
             Confirmations = new List<Confirmation>();
         }
@@ -41,7 +40,7 @@ namespace Exam.Domain.Entities
         //Navigation Properties
         public virtual Contrat Contrat { get; set; }
         public virtual ICollection<UserAccount> GarageExperts { get; set; }
-        public virtual ICollection<BonDeSortie> BonsDeSorties { get; set; }
+        public virtual BonDeSortie BonsDeSortie { get; set; }
         public virtual ICollection<Facture> Factures { get; set; }
         public virtual ICollection<Confirmation> Confirmations { get; set; }
         public virtual ICollection<ImageSinistre> Images { get; set; }

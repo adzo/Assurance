@@ -11,7 +11,11 @@ namespace AssuranceWebAspNet.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["Role"] == null || Session["Role"].ToString() != "Expert")
+            {
+                Response.Redirect("~/Login.aspx");
+            }
+            ConnectedUser.Text = Session["FirstName"].ToString() + ", " + Session["LastName"].ToString();
         }
     }
 }

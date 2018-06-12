@@ -18,6 +18,7 @@ namespace AssuranceWebAspNet.Pages.Garagiste
         ListItem i;
         protected void Page_Load(object sender, EventArgs e)
         {
+            Session["target"] = "/Pages/Garagiste/listeSinistre";
             if (Session["SinistreId"] != null)
             {
 
@@ -96,7 +97,16 @@ namespace AssuranceWebAspNet.Pages.Garagiste
                 }
                 if (s.Phase != null)
                 {
-                    if ((s.Phase.Equals("Reparation")  || s.Phase.Equals("Confirmation de devis") || s.Phase.Equals("Confirmation de reparation") || s.Phase.Equals("Edition Bon De Sortie") || s.Phase.Equals("Envoie des devis de réparation"))&& garage.UserId.ToString()==Session["userId"].ToString() )
+                    string connectedGarage;
+                    try
+                    {
+                        connectedGarage = Session["userId"].ToString();
+                    }
+                    catch
+                    {
+                        connectedGarage = "";
+                    }
+                    if ((s.Phase.Equals("Réparation") || s.Phase.Equals("Confirmation Réparation") || s.Phase.Equals("Confirmation de devis") || s.Phase.Equals("Confirmation de reparation") || s.Phase.Equals("Edition Bon De Sortie") || s.Phase.Equals("Envoie des devis de réparation"))&& garage.UserId.ToString()==connectedGarage )
                     {
                         tr = new TableRow();
 

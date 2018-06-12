@@ -76,7 +76,8 @@
                     <!-- notificatoin dropdown start-->
                     <ul class="nav pull-right top-menu">
 
-
+                        <li>
+                            <asp:Label ID="ConnectedUser" runat="server" Text="Label"></asp:Label></li>
 
                         <!-- alert notification start-->
                         <li id="alert_notificatoin_bar" class="dropdown">
@@ -172,9 +173,9 @@
                             </a>
                         </li>
                           <li>
-                            <a class="" href="Historiques.aspx">
+                            <a class="" href="Assures.aspx">
                                 <i class="icon_genius"></i>
-                                <span>Historiques</span>
+                                <span>Assurés</span>
                             </a>
                         </li>
                           <li>
@@ -190,21 +191,28 @@
                             </a>
                         </li>
   <li>
-                            <a class="" href="Notifications.aspx">
+                            <a class="" href="Reclamation.aspx">
                                 <i class="icon_genius"></i>
-                                <span>Notifications</span>
+                                <span>Reclamations</span>
                             </a>
                         </li>
-                          <li>
-                            <a class="" href="Statistiques.aspx">
-                                <i class="icon_genius"></i>
-                                <span>Statistiques</span>
-                            </a>
-                        </li>
+                         
                          <li>
                             <a class="" href="CreerSinistre.aspx">
                                 <i class="icon_genius"></i>
                                 <span>Administration</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="" href="Historique.aspx">
+                                <i class="icon_genius"></i>
+                                <span>Historique</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="" href="Statistiques.aspx">
+                                <i class="icon_genius"></i>
+                                <span>Stqtistique</span>
                             </a>
                         </li>
 

@@ -11,10 +11,11 @@ namespace AssuranceWebAspNet.Pages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //if (Session["Role"] == null || Session["Role"].ToString() != "Garage")
-            //{
-            //    Response.Redirect("~/Login.aspx");
-            //}
+            if (Session["Role"] == null || Session["Role"].ToString() != "Garage")
+            {
+                Response.Redirect("~/Login.aspx");
+            }
+            ConnectedUser.Text = Session["FirstName"].ToString() + ", " + Session["LastName"].ToString();
         }
     }
 }

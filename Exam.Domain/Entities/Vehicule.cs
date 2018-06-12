@@ -11,7 +11,6 @@ namespace Exam.Domain.Entities
     public class Vehicule
     {
         [Key]
-        
         public int Id { get; set; }
         public string Matricule { get; set; }
         public string Genre { get; set; }

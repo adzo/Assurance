@@ -11,7 +11,7 @@ namespace AssuranceWebAspNet.Pages.Expert
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Session["target"] = "/Pages/Expert/Accueil";
         }
     }
 }

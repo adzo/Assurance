@@ -12,8 +12,8 @@ namespace Exam.Domain.Entities
         [Key]
         public int FactureId { get; set; }
         public string DateFacture { get; set; }
-        public string Description { get; set; }
-        public int Montant { get; set; }
+        public string LinkFacture { get; set; }
+        
 
         //Foreign Key
         public int SinistreId { get; set; }

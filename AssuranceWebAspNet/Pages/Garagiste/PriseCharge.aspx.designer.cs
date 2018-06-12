@@ -12,6 +12,15 @@
 public partial class GaragistePriseCharge {
     
     /// <summary>
+    /// ScriptManager1 control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.ScriptManager ScriptManager1;
+    
+    /// <summary>
     /// TextBox1_Sinistre control.
     /// </summary>
     /// <remarks>
@@ -183,49 +192,49 @@ public partial class GaragistePriseCharge {
     protected global::System.Web.UI.WebControls.Table devisTable;
     
     /// <summary>
-    /// FileUpload4 control.
+    /// FileUpload_PhotoAfterReparation control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.FileUpload FileUpload4;
+    protected global::System.Web.UI.WebControls.FileUpload FileUpload_PhotoAfterReparation;
     
     /// <summary>
-    /// Button3 control.
+    /// Button_UploadPhotoAfterReparation control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.Button Button3;
+    protected global::System.Web.UI.WebControls.Button Button_UploadPhotoAfterReparation;
     
     /// <summary>
-    /// rep_table control.
+    /// Table_PhotoApresReparation control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.Table rep_table;
+    protected global::System.Web.UI.WebControls.Table Table_PhotoApresReparation;
     
     /// <summary>
-    /// FileUpload3 control.
+    /// FileUpload_Factures control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.FileUpload FileUpload3;
+    protected global::System.Web.UI.WebControls.FileUpload FileUpload_Factures;
     
     /// <summary>
-    /// Button4 control.
+    /// Button_UploadFactures control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.Button Button4;
+    protected global::System.Web.UI.WebControls.Button Button_UploadFactures;
     
     /// <summary>
     /// favt_table control.
@@ -237,38 +246,128 @@ public partial class GaragistePriseCharge {
     protected global::System.Web.UI.WebControls.Table favt_table;
     
     /// <summary>
-    /// FileUpload2 control.
+    /// divUploadBonDeSortie control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.FileUpload FileUpload2;
+    protected global::System.Web.UI.HtmlControls.HtmlGenericControl divUploadBonDeSortie;
     
     /// <summary>
-    /// Button5 control.
+    /// FileUploadBonDeSortie control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.Button Button5;
+    protected global::System.Web.UI.WebControls.FileUpload FileUploadBonDeSortie;
     
     /// <summary>
-    /// Table1 control.
+    /// ButtonAjouterBonDeSortie control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.Table Table1;
+    protected global::System.Web.UI.WebControls.Button ButtonAjouterBonDeSortie;
     
     /// <summary>
-    /// PlaceHolder1 control.
+    /// LabelBonDeSortieNumero control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.PlaceHolder PlaceHolder1;
+    protected global::System.Web.UI.WebControls.Label LabelBonDeSortieNumero;
+    
+    /// <summary>
+    /// LabelBonDeSortieDate control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.Label LabelBonDeSortieDate;
+    
+    /// <summary>
+    /// ViewNonSigne control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.LinkButton ViewNonSigne;
+    
+    /// <summary>
+    /// ViewSigne control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.LinkButton ViewSigne;
+    
+    /// <summary>
+    /// DeleteBonSortie control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.LinkButton DeleteBonSortie;
+    
+    /// <summary>
+    /// PanelImageAvantReparation control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.Panel PanelImageAvantReparation;
+    
+    /// <summary>
+    /// ImageAvantReparationPreview control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.Image ImageAvantReparationPreview;
+    
+    /// <summary>
+    /// Msg control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.Label Msg;
+    
+    /// <summary>
+    /// button_CancelImageView control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.Button button_CancelImageView;
+    
+    /// <summary>
+    /// ModalPopupExtender1 control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::AjaxControlToolkit.ModalPopupExtender ModalPopupExtender1;
+    
+    /// <summary>
+    /// Button_PreviewImage control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.Button Button_PreviewImage;
 }

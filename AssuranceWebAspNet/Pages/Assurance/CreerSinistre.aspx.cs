@@ -22,6 +22,7 @@ namespace AssuranceWebAspNet.Pages.Assurance
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            Session["target"] = "/Pages/Assurance/CreerSinistre";
             if (!IsPostBack)
             {
                 this.LoadDropDawnListContractView();
@@ -44,15 +45,15 @@ namespace AssuranceWebAspNet.Pages.Assurance
         //Populating dropdownList for assure et Souscripteur in Contract view
         protected void LoadDropDawnListContractView()
         {
-            ICollection<Assure> listeAssures = u.Assures.ToList();
+            ICollection<Exam.Domain.Entities.Assure> listeAssures = u.Assures.ToList();
             if (listeAssures != null)
             {
                 DropDownList_ListAssures.Items.Clear();
                 ListItem I;
-                foreach (Assure A in listeAssures)
+                foreach (Exam.Domain.Entities.Assure A in listeAssures)
                 {
-                    I = new ListItem(A.Id.ToString()+" : "+A.Nom + ", " + A.Prenom, A.Id.ToString());
-                    Javascript.ConsoleLog(A.Nom + ", " + A.Prenom + " :" + A.Id.ToString());
+                    I = new ListItem(A.AssureId.ToString()+" : "+A.Nom + ", " + A.Prenom, A.AssureId.ToString());
+                    Javascript.ConsoleLog(A.Nom + ", " + A.Prenom + " :" + A.AssureId.ToString());
                     DropDownList_ListAssures.Items.Add(I);
                 }
             }
@@ -74,7 +75,7 @@ namespace AssuranceWebAspNet.Pages.Assurance
             }
             ICollection<Vehicule> listeVehicules = u.Vehicules.ToList();
             ICollection<Contrat> listeContrats = u.Contrats.ToList();
-            if (listeAssures != null)
+            if (listeVehicules != null)
             {
                 DropDownList_ListeVehicules.Items.Clear();
                 ListItem I;
@@ -123,7 +124,7 @@ namespace AssuranceWebAspNet.Pages.Assurance
         protected void LoadDropDownListSinistreView()
         {
             ListItem i;
-            //load dropDownList Garage et Expert
+            //load dropDownList Garage et Experts
             List<UserAccount> listeExpertGaragiste = u.Users.ToList();
             if (listeExpertGaragiste != null)
                 DropDownList_SinistreListeExpert.Items.Clear();
@@ -165,7 +166,7 @@ namespace AssuranceWebAspNet.Pages.Assurance
             //{
             //    foreach(Vehicule v in listeVehicule)
             //    {
-            //        i = new ListItem(v.Matricule, v.Id.ToString());
+            //        i = new ListItem(v.Matricule, v.AssureId.ToString());
             //        DropDownList_Immatriculation.Items.Add(i);
             //    }
             //}
@@ -229,7 +230,7 @@ namespace AssuranceWebAspNet.Pages.Assurance
             s.Contrat = u.Contrats.Find(idContrat);
 
             Javascript.ConsoleLog(s.Contrat.Souscripteur.Nom);
-
+            s.Phase = "Expertise";
             u.Sinistres.Add(s);
             u.SaveChanges();
 
@@ -246,7 +247,7 @@ namespace AssuranceWebAspNet.Pages.Assurance
 
             cg.ContratId = Int32.Parse(DropDownList_ListeContrat.SelectedItem.Value);
             cg.GarantieId = Int32.Parse(DropDownList_ListeGarantie.SelectedItem.Value);
-            Javascript.ConsoleLog("Contrat Id: " + cg.ContratId + " | Garantie Id: " + cg.GarantieId);
+            Javascript.ConsoleLog("Contrat AssureId: " + cg.ContratId + " | Garantie AssureId: " + cg.GarantieId);
             int i = 0;
             Int32.TryParse(TextBox_Capital.Text, out i);
             cg.Capital = i;
@@ -306,7 +307,9 @@ namespace AssuranceWebAspNet.Pages.Assurance
 
         protected void Button_EnregistrerAssure_Click(object sender, EventArgs e)
         {
-            Assure a = new Assure();
+
+
+            Exam.Domain.Entities.Assure a = new Exam.Domain.Entities.Assure();
             Addresse A = new Addresse();
             Contact C = new Contact();
             int i = 0;
@@ -337,9 +340,24 @@ namespace AssuranceWebAspNet.Pages.Assurance
             i = 0;
             Int32.TryParse(TextBox_FaxAssure.Text, out i);
             C.Fax = i;
+            C.Email = TextBox_MailAssure.Text;
             i = 0;
             a.Addresse = A;
             a.Contact = C;
+
+            UserAccount assu = new UserAccount()
+            {
+                Email = a.Contact.Email,
+                FirstName = a.Prenom,
+                LastName = a.Nom,
+                PhoneNumber = (int)a.Contact.Mobile,
+                Role = "Assure",
+                Password = "1234",
+                ConfirmPassword = "1234"
+            };
+            u.Users.Add(assu);
+            u.SaveChanges();
+            a.UserAccount = assu;
             u.Assures.Add(a);
             u.SaveChanges();
             Javascript.ConsoleLog("clicked Assuré add");

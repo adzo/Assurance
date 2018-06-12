@@ -63,6 +63,8 @@
                     <!-- notificatoin dropdown start-->
                     <ul class="nav pull-right top-menu">
 
+                         <li>
+                            <asp:Label ID="ConnectedUser" runat="server" Text="Label"></asp:Label></li>
 
 
                         <!-- alert notification start-->

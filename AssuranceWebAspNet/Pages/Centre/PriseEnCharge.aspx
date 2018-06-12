@@ -26,12 +26,8 @@
 
 
                         </div>
-                        <div class="form-horizontal form-group">
-
-                            <asp:TextBox ID="_TxtNumContrat" CssClass="form-control input-group-sm" runat="server" placeholder="Numéro de contrat"></asp:TextBox>
-
-                        </div>
-                        <asp:Button ID="btnChercher" CssClass="btn btn-info" runat="server" Text="Recherche" />
+                        
+                        <asp:Button ID="btnChercher" CssClass="btn btn-info" runat="server" OnClick="btnChercher_Click" Text="Recherche" />
                     </div>
                 </div>
                 <div class="row" visible="false" id="res" runat="server">
@@ -502,10 +498,7 @@
                                 <div class="form-group">
                                     <label class="control-label col-sm-4" for="email">Avec délégation:</label>
                                     <div class="col-sm-6">
-                                        <label class="radio-inline">
-                                            <input type="radio" name="optradio">Oui</label>
-                                        <label class="radio-inline">
-                                            <input type="radio" name="optradio">Non</label>
+                                        <asp:TextBox ID="_Delegation" CssClass="form-control input-sm" runat="server"></asp:TextBox>
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -711,6 +704,7 @@
                             </div>
                         </div>
                     </div>
+                    
                     <!-- Menu Sinistre -->
                     <div id="menu6" class="tab-pane">
                         <br />

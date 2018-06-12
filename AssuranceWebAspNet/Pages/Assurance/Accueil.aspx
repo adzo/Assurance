@@ -29,10 +29,10 @@
           </div>
              <div class="row">
               <div class="col-md-4">
-                  <a href="#" > <div class="thumbnail pull-right" style="width:60%;height:auto"><img src="../../img/imgAccueil/client.jpg" class="img-rounded img-responsive"  /><div class="caption"><h4 class="text-center"><b>Clients</b></h4></div></div></a>
+                  <a href="Assures.aspx" > <div class="thumbnail pull-right" style="width:60%;height:auto"><img src="../../img/imgAccueil/client.jpg" class="img-rounded img-responsive"  /><div class="caption"><h4 class="text-center"><b>Clients</b></h4></div></div></a>
               </div>
                <div class="col-md-4">
-              <a href="Historiques.aspx" > <div class="thumbnail centered" style="width:60%;height:auto"><img src="../../img/imgAccueil/hist.jpg" class="img-rounded img-responsive"  /><div class="caption"><h4 class="text-center"><b>Historiques</b></h4></div></div></a>
+              <a href="Historique.aspx" > <div class="thumbnail centered" style="width:60%;height:auto"><img src="../../img/imgAccueil/hist.jpg" class="img-rounded img-responsive"  /><div class="caption"><h4 class="text-center"><b>Historiques</b></h4></div></div></a>
               </div>
                <div class="col-md-4">
                    <a href="Statistiques.aspx" > <div class="thumbnail pull-left" style="width:60%;height:auto"><img src="../../img/imgAccueil/stat.jpg" class="img-rounded img-responsive"  /><div class="caption"><h4 class="text-center"><b>Statistiques</b></h4></div></div></a>

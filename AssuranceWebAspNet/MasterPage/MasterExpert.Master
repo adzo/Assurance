@@ -63,6 +63,8 @@
                     <!-- notificatoin dropdown start-->
                     <ul class="nav pull-right top-menu">
 
+                         <li>
+                            <asp:Label ID="ConnectedUser" runat="server" Text="Label"></asp:Label></li>
 
 
                         <!-- alert notification start-->
@@ -154,7 +156,7 @@
 
 
                         <li>
-                            <a class="" href="PriseCharge.aspx">
+                            <a class="" href="PriseEnCharge.aspx">
                                 <i class="icon_genius"></i>
                                 <span>Prise en charge</span>
                             </a>

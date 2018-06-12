@@ -22,15 +22,6 @@ namespace AssuranceWebAspNet.Pages.Centre {
         protected global::System.Web.UI.WebControls.TextBox _TxtNumSinistre;
         
         /// <summary>
-        /// _TxtNumContrat control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox _TxtNumContrat;
-        
-        /// <summary>
         /// btnChercher control.
         /// </summary>
         /// <remarks>
@@ -560,6 +551,15 @@ namespace AssuranceWebAspNet.Pages.Centre {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox _TypeRemorque;
+        
+        /// <summary>
+        /// _Delegation control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox _Delegation;
         
         /// <summary>
         /// _ValeuràNeuf control.

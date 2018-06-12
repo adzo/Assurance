@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,7 +12,8 @@ namespace Exam.Domain.Entities
     {
        
         [Key]
-        public int Id { get; set; }
+        [ForeignKey("UserAccount")]
+        public int AssureId { get; set; }
         public string TypeAssure { get; set; }
         public string TypeIdentifiant { get; set; }
         public int NumeroIdentifiant { get; set; }
@@ -31,7 +33,11 @@ namespace Exam.Domain.Entities
         public  Contact Contact { get; set; }
 
         //Navigation Properties
+        public virtual UserAccount UserAccount { get; set; }
         public virtual ICollection<Contrat> Contrats { get; set; }
+        public virtual ICollection<Reclamation> Reclamations { get; set; }
+        
+
 
     }
 }

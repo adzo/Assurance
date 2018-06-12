@@ -11,11 +11,8 @@ namespace AssuranceWebAspNet.Pages.Assurance
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["Role"] == null || Session["Role"].ToString() != "Assurance")
-            {
                 Session["target"] = "/Pages/Assurance/Accueil";
-                Response.Redirect("~/Login.aspx");
-            }
+                
         }
     }
 }

@@ -12,6 +12,7 @@ namespace AssuranceWebAspNet.Pages.Garagiste
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            Session["target"] = "/Pages/Garagiste/Detail";
             if (Session["sinistreId"] != null)
             {
                 //Load the page

@@ -18,9 +18,9 @@ namespace Exam.Data.Configurations
                 .HasForeignKey<int>(g => g.ContratId);
             
             //Many to One Relation between Sinistre et Bon de sortie
-            HasMany<BonDeSortie>(s => s.BonsDeSorties)
-                .WithRequired(s => s.Sinistre)
-                .HasForeignKey(s => s.SinistreId);
+            //HasMany<BonDeSortie>(s => s.BonsDeSorties)
+            //    .WithRequired(s => s.Sinistre)
+            //    .HasForeignKey(s => s.SinistreId);
             //Many to One relation between SInistre et Images
             HasMany<ImageSinistre>(s => s.Images).
                 WithRequired(s => s.Sinistre).

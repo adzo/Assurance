@@ -727,10 +727,21 @@
     <Content Include="Login.aspx" />
     <Content Include="logout.aspx" />
     <Content Include="Pages\Assurance\Accueil.aspx" />
+    <Content Include="Pages\Assurance\Assures.aspx" />
     <Content Include="Pages\Assurance\CreerSinistre.aspx" />
+    <Content Include="Pages\Assurance\Experts.aspx" />
+    <Content Include="Pages\Assurance\Garages.aspx" />
+    <Content Include="Pages\Assurance\Historique.aspx" />
     <Content Include="Pages\Assurance\listeSinistre.aspx" />
     <Content Include="Pages\Assurance\PriseEnCharge.aspx" />
+    <Content Include="Pages\Assurance\Reclamation.aspx" />
+    <Content Include="Pages\Assurance\Statistiques.aspx" />
+    <Content Include="Pages\Assure\Compte.aspx" />
+    <Content Include="Pages\Assure\Home.aspx" />
     <Content Include="Pages\Centre\Accueil.aspx" />
+    <Content Include="Pages\Centre\Assures.aspx" />
+    <Content Include="Pages\Centre\Experts.aspx" />
+    <Content Include="Pages\Centre\Garages.aspx" />
     <Content Include="Pages\Centre\ListeSinistre.aspx" />
     <Content Include="Pages\Centre\PriseEnCharge.aspx" />
     <Content Include="Pages\Expert\Accueil.aspx" />
@@ -750,6 +761,7 @@
     <Content Include="MasterPage\MasterAssurance.Master" />
     <Content Include="MasterPage\MasterCentre.Master" />
     <Content Include="MasterPage\MasterExpert.Master" />
+    <Content Include="MasterPage\MasterAssure.Master" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -917,6 +929,13 @@
     <Compile Include="MasterPage\MasterAssurance.Master.designer.cs">
       <DependentUpon>MasterAssurance.Master</DependentUpon>
     </Compile>
+    <Compile Include="MasterPage\MasterAssure.Master.cs">
+      <DependentUpon>MasterAssure.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPage\MasterAssure.Master.designer.cs">
+      <DependentUpon>MasterAssure.Master</DependentUpon>
+    </Compile>
     <Compile Include="MasterPage\MasterCentre.Master.cs">
       <DependentUpon>MasterCentre.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -938,12 +957,40 @@
     <Compile Include="Pages\Assurance\Accueil.aspx.designer.cs">
       <DependentUpon>Accueil.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Assurance\Assures.aspx.cs">
+      <DependentUpon>Assures.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Assurance\Assures.aspx.designer.cs">
+      <DependentUpon>Assures.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Assurance\CreerSinistre.aspx.cs">
       <DependentUpon>CreerSinistre.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Pages\Assurance\CreerSinistre.aspx.designer.cs">
       <DependentUpon>CreerSinistre.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Assurance\Experts.aspx.cs">
+      <DependentUpon>Experts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Assurance\Experts.aspx.designer.cs">
+      <DependentUpon>Experts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Assurance\Garages.aspx.cs">
+      <DependentUpon>Garages.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Assurance\Garages.aspx.designer.cs">
+      <DependentUpon>Garages.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Assurance\Historique.aspx.cs">
+      <DependentUpon>Historique.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Assurance\Historique.aspx.designer.cs">
+      <DependentUpon>Historique.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Assurance\listeSinistre.aspx.cs">
       <DependentUpon>listeSinistre.aspx</DependentUpon>
@@ -959,12 +1006,61 @@
     <Compile Include="Pages\Assurance\PriseEnCharge.aspx.designer.cs">
       <DependentUpon>PriseEnCharge.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Assurance\Reclamation.aspx.cs">
+      <DependentUpon>Reclamation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Assurance\Reclamation.aspx.designer.cs">
+      <DependentUpon>Reclamation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Assurance\Statistiques.aspx.cs">
+      <DependentUpon>Statistiques.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Assurance\Statistiques.aspx.designer.cs">
+      <DependentUpon>Statistiques.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Assure\Compte.aspx.cs">
+      <DependentUpon>Compte.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Assure\Compte.aspx.designer.cs">
+      <DependentUpon>Compte.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Assure\Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Assure\Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Centre\Accueil.aspx.cs">
       <DependentUpon>Accueil.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Pages\Centre\Accueil.aspx.designer.cs">
       <DependentUpon>Accueil.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Centre\Assures.aspx.cs">
+      <DependentUpon>Assures.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Centre\Assures.aspx.designer.cs">
+      <DependentUpon>Assures.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Centre\Experts.aspx.cs">
+      <DependentUpon>Experts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Centre\Experts.aspx.designer.cs">
+      <DependentUpon>Experts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Centre\Garages.aspx.cs">
+      <DependentUpon>Garages.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Centre\Garages.aspx.designer.cs">
+      <DependentUpon>Garages.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Centre\ListeSinistre.aspx.cs">
       <DependentUpon>ListeSinistre.aspx</DependentUpon>

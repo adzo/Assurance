@@ -21,6 +21,7 @@ namespace AssuranceWebAspNet.Pages.Expert
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            Session["target"] = "/Pages/Expert/PriseEnCharge";
             if (Request.QueryString["param1"] != null)
             {
                 sinistreId = Int32.Parse(Request.QueryString["param1"].ToString());
@@ -99,6 +100,7 @@ namespace AssuranceWebAspNet.Pages.Expert
                     FileUpload_ImageAvantReparation.SaveAs(path + img.ImageLink);
                     sinis.Phase = "Envoie des devis de réparation";
                     usr.SaveChanges();
+                    Page_Load(sender, e);
                 }
             }
             else
@@ -200,7 +202,7 @@ namespace AssuranceWebAspNet.Pages.Expert
         {
             LinkButton source = (LinkButton)sender;
             Devis dev = usr.Devis.Where(s => s.DevisUrl == source.ID).FirstOrDefault();
-
+            dev.Sinistre.Phase = "Réparation";
             dev.Conformite = "Conforme";
             usr.SaveChanges();
         }
@@ -221,7 +223,9 @@ namespace AssuranceWebAspNet.Pages.Expert
                     Rap.DateRapport = DateTime.Now.ToString("dd-MM-yyyy");
                     usr.Rapports.Add(Rap);
                     FileUpload_RapportExpertise.SaveAs(path + Rap.RapportUrl);
+                    sinis.Phase = "Envoie des devis de réparation";
                     usr.SaveChanges();
+                    Page_Load(sender, e);
                 }
             }
         }
@@ -244,6 +248,7 @@ namespace AssuranceWebAspNet.Pages.Expert
                     FileUpload_RapportExpertiseFinal.SaveAs(path + Rap.RapportUrl);
                     sinis.Phase = "Edition Bon De Sortie";
                     usr.SaveChanges();
+                    Page_Load(sender, e);
                 }
             }
         }
@@ -381,7 +386,7 @@ namespace AssuranceWebAspNet.Pages.Expert
             List<ImageSinistre> ResultList = new List<ImageSinistre>();
             foreach (ImageSinistre img in list)
             {
-                if (img.Status == "Aprés" && img.SinistreId == sinistreId)
+                if (img.Status == "Apres" && img.SinistreId == sinistreId)
                 {
                     ResultList.Add(img);
                 }

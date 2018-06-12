@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage/MasterCentre.Master" AutoEventWireup="true" CodeBehind="ListeSinistre.aspx.cs" Inherits="AssuranceWebAspNet.Pages.Expert.ListeSinistre" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage/MasterExpert.Master" AutoEventWireup="true" CodeBehind="ListeSinistre.aspx.cs" Inherits="AssuranceWebAspNet.Pages.Expert.ListeSinistre" %>
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">

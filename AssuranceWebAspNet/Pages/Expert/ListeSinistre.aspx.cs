@@ -18,6 +18,7 @@ namespace AssuranceWebAspNet.Pages.Expert
         ListItem i;
         protected void Page_Load(object sender, EventArgs e)
         {
+            Session["target"] = "/Pages/Expert/ListeSinistre";
             if (Session["SinistreId"] != null)
             {
 
@@ -96,7 +97,7 @@ namespace AssuranceWebAspNet.Pages.Expert
                 }
                 if(s.Phase != null)
                 {
-                    if (s.Phase.Equals("Reparation") || s.Phase.Equals("Expertise") || s.Phase.Equals("Confirmation de devis") || s.Phase.Equals("Confirmation de reparation")  || s.Phase.Equals("Envoie des devis de réparation"))
+                    if (s.Phase.Equals("Réparation") || s.Phase.Equals("Expertise") || s.Phase.Equals("Confirmation de devis") || s.Phase.Equals("Confirmation Réparation")  || s.Phase.Equals("Envoie des devis de réparation"))
                     {
                         tr = new TableRow();
 

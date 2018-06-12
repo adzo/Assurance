@@ -53,6 +53,7 @@
     <Compile Include="Entities\Garantie.cs" />
     <Compile Include="Entities\ImageSinistre.cs" />
     <Compile Include="Entities\Rapport.cs" />
+    <Compile Include="Entities\Reclamation.cs" />
     <Compile Include="Entities\Sinistre.cs" />
     <Compile Include="Entities\SinistreUserAccount.cs" />
     <Compile Include="Entities\Souscripteur.cs" />

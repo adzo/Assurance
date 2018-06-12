@@ -28,6 +28,10 @@ namespace Exam.Data
         public DbSet<ImageSinistre> Images { get; set; }
         public DbSet<Rapport> Rapports { get; set; }
         public DbSet<Devis> Devis { get; set; }
+        public DbSet<BonDeSortie> BonDeSorties { get; set; }
+        public DbSet<Reclamation> Reclamations { get; set; }
+        public DbSet<Facture> Factures { get; set; }
+
 
 
 
@@ -38,6 +42,7 @@ namespace Exam.Data
             modelBuilder.Configurations.Add(new ContratConfiguration());
             modelBuilder.Configurations.Add(new SinistreConfiguration());
             modelBuilder.Configurations.Add(new ContratGarantieConfiguration());
+            modelBuilder.Configurations.Add(new AssureConfiguration());
 
         }
 

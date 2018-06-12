@@ -20,6 +20,7 @@ namespace AssuranceWebAspNet.Pages.Centre
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            Session["target"] = "/Pages/Centre/ListeSinistre";
             if (!IsPostBack)
             {
                 this.loadPopupModalSelectLists();
@@ -106,7 +107,7 @@ namespace AssuranceWebAspNet.Pages.Centre
                 }
             }
 
-            //load dropDownList Garage et Expert
+            //load dropDownList Garage et Experts
             List<UserAccount> listeExpertGaragiste = usr.Users.ToList();
             if (listeExpertGaragiste != null)
                 DropDownList_SinistreListeExpert.Items.Clear();
