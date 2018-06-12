@@ -30,7 +30,7 @@
             <h3 class="page-header"><i class="fa fa fa-bars"></i>Recherche sinistre</h3>
             <ol class="breadcrumb">
               <li><i class="fa fa-home"></i><a href="Accueil.aspx">Accueil</a></li>
-                <li><a href="PriseCharge.aspx">Recherche sinistre</a></li>
+                <li><a href="listeSinistre.aspx">Recherche sinistre</a></li>
             </ol>
           </div>
         </div>

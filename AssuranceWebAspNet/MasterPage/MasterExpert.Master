@@ -162,19 +162,14 @@
                             </a>
                         </li>
                         <li>
-                            <a class="" href="Historiques.aspx">
+                            <a class="" href="Historique.aspx">
                                 <i class="icon_genius"></i>
                                 <span>Historiques</span>
                             </a>
                         </li>
 
 
-                        <li>
-                            <a class="" href="Notifications.aspx">
-                                <i class="icon_genius"></i>
-                                <span>Notifications</span>
-                            </a>
-                        </li>
+                        
                         <li>
                             <a class="" href="Statistiques.aspx">
                                 <i class="icon_genius"></i>

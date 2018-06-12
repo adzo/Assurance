@@ -11,7 +11,7 @@
                     <h3 class="page-header"><i class="fa fa fa-bars"></i>Prise en charge</h3>
                     <ol class="breadcrumb">
                         <li><i class="fa fa-home"></i><a href="Accueil.aspx">Accueil</a></li>
-                        <li><a href="PriseCharge.aspx">Prise en charge</a></li>
+                        <li><a href="listeSinistre.aspx">Liste Sinistre</a></li><li><a href="PriseCharge.aspx">Prise en charge</a></li>
 
 
                     </ol>
@@ -648,7 +648,10 @@
                     <div id="menu5" class="tab-pane">
                         <br />
                         <div class="row">
-                            <div class="col-md-7">
+                            <div class="col-md-2">
+                                <h2 hidden="hidden">Test</h2>
+                            </div>
+                            <div class="col-md-8">
                                 <fieldset>
                                     <legend>Garanties</legend>
                                     <table class="table table-striped">

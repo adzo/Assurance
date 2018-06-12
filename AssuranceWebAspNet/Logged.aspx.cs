@@ -15,7 +15,7 @@ namespace AssuranceWebAspNet.Pages
             //VerifyIdentity.Verify.verifyConnected();
             if (Session["Role"] != null)
             {
-                Session["target"] = null;
+                //Session["target"] = null;
                 if (Session["Role"].ToString() == "Assurance")
                 {
                     if (Session["target"] != null){
