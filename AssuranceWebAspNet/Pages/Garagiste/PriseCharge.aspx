@@ -123,10 +123,26 @@
                         <fieldset>
                             <legend>Devis</legend>
 
+                            <div class="row">
+                                <div class="col-md-1">
+                                    <h2 hidden="hidden">test</h2>
+                                </div>
+                                <div class="col-md-10">
+                                    <asp:Table ID="TableDevis" runat="server"></asp:Table>
+                                </div>
+                            </div>
+
+
+
                             <asp:FileUpload ID="FileUpload_Devis" runat="server" />
                             <asp:Button ID="ButtonUploadDevis" runat="server" OnClick="ButtonUploadDevis_Click" Text="sauvegarder" />
                             <br />
-                            <asp:Table ID="devisTable" runat="server"></asp:Table>
+
+
+
+
+
+                            
                         </fieldset>
                     </div>
 

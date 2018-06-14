@@ -165,6 +165,15 @@ public partial class GaragistePriseCharge {
     protected global::System.Web.UI.WebControls.Label LabelVehiculeAdverse;
     
     /// <summary>
+    /// TableDevis control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.Table TableDevis;
+    
+    /// <summary>
     /// FileUpload_Devis control.
     /// </summary>
     /// <remarks>
@@ -181,15 +190,6 @@ public partial class GaragistePriseCharge {
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.WebControls.Button ButtonUploadDevis;
-    
-    /// <summary>
-    /// devisTable control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.Table devisTable;
     
     /// <summary>
     /// FileUpload_PhotoAfterReparation control.

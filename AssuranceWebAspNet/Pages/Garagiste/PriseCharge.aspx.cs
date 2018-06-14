@@ -28,6 +28,7 @@ public partial class GaragistePriseCharge : System.Web.UI.Page
             sinistreId = Int32.Parse(Request.QueryString["param1"].ToString());
             sinis = usr.Sinistres.Find(sinistreId);
             PopulateSinistreFields(sinis);
+            LoadDevis();
             LoadImagesApresReparation();
             LoadFactures();
             if (sinis.BonsDeSortie != null)
@@ -50,6 +51,48 @@ public partial class GaragistePriseCharge : System.Web.UI.Page
 
 
     }
+    private List<Devis> listeDevis()
+    {
+
+        return sinis.Devis.ToList();
+    }
+    private void LoadDevis()
+    {
+        TableDevis.Rows.Clear();
+        TableHeaderRow th = new TableHeaderRow();
+        TableHeaderCell cellDateH, cellConformiteH, cellDevisH;
+        TableRow tr;
+        TableCell cellDate, cellConformite, cellDevis;
+        cellDateH = new TableHeaderCell() { Text = "Date" };
+        cellConformiteH = new TableHeaderCell() { Text = "Conformité" };
+        cellDevisH = new TableHeaderCell() { Text = "Devis" };
+        th.Cells.Add(cellDateH);
+        th.Cells.Add(cellConformiteH);
+        th.Cells.Add(cellDevisH);
+        TableDevis.Rows.Add(th);
+        
+        if (listeDevis() != null)
+        {
+            foreach (Devis dev in listeDevis())
+            {
+                
+                    tr = new TableRow();
+                    
+                    cellDate = new TableCell() { Text = dev.DateDevis };
+                    cellConformite = new TableCell() { Text = dev.Conformite };
+                    
+                    
+                    cellDevis = new TableCell() { Text = "Devis" };
+                    tr.Cells.Add(cellDate);
+                    tr.Cells.Add(cellConformite);
+                    tr.Cells.Add(cellDevis);
+                    TableDevis.Rows.Add(tr);
+                
+
+            }
+        }
+    }
+
     private List<ImageSinistre> listeImageApresReparation()
     {
         List<ImageSinistre> list = sinis.Images.ToList();

@@ -17,17 +17,7 @@
             </ol>
           </div>
         </div>
-           <div class="container">
-             <div class="row">
-                <div class="form-inline">
-                    <div class="form-horizontal form-group">
-                        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-                        <asp:Button ID="Button_ajouterSinistre" CssClass="btn btn-info" runat="server" Text="Ajouter" />
-                        
-                    </div>
-                </div>
-            </div>
-            </div>
+           
 
           <br />
 

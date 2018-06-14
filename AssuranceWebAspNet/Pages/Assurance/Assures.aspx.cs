@@ -128,7 +128,7 @@ namespace AssuranceWebAspNet.Pages.Assurance
             u.Assures.Add(a);
             u.SaveChanges();
             Javascript.ConsoleLog("clicked Assuré add");
-
+            Page_Load(sender, e);
         }
 
     }
